@@ -69,7 +69,7 @@
         <file>images/kmPointer.png</file>
         <file>images/tripTotalMileage/KMright.png</file>
         <file>images/tripTotalMileage/KMleft.png</file>
-        <file>images/charge/充电图标.png</file>
+        <file>images/charge/iconCharge.png</file>
         <file>images/charge/charging.png</file>
         <file>images/charge/chargeFault.png</file>
         <file>images/charge/chargeComplete.png</file>
@@ -103,37 +103,37 @@
         <file>images/lights/engineOilLight.png</file>
         <file>images/lights/airBag.png</file>
         <file>images/lights/absErr.png</file>
-        <file>images/bottomFour/电量白/1_副本___2.png</file>
-        <file>images/bottomFour/电量白/2_副本___2.png</file>
-        <file>images/bottomFour/电量白/3_副本___2.png</file>
-        <file>images/bottomFour/电量白/4_副本___2.png</file>
-        <file>images/bottomFour/电量白/5_副本___2.png</file>
-        <file>images/bottomFour/电量白/6_副本___2.png</file>
-        <file>images/bottomFour/电量白/7_副本___2.png</file>
-        <file>images/bottomFour/电量白/8_副本___2.png</file>
-        <file>images/bottomFour/油量白/1___1.png</file>
-        <file>images/bottomFour/油量白/2___1.png</file>
-        <file>images/bottomFour/油量白/3___1.png</file>
-        <file>images/bottomFour/油量白/4___1.png</file>
-        <file>images/bottomFour/油量白/5___1.png</file>
-        <file>images/bottomFour/油量白/6___1.png</file>
-        <file>images/bottomFour/油量白/7___1.png</file>
-        <file>images/bottomFour/油量白/8___1.png</file>
-        <file>images/bottomFour/机油白/1___4.png</file>
-        <file>images/bottomFour/机油白/2___4.png</file>
-        <file>images/bottomFour/机油白/3___4.png</file>
-        <file>images/bottomFour/机油白/4___4.png</file>
-        <file>images/bottomFour/机油白/5___4.png</file>
-        <file>images/bottomFour/机油白/6___4.png</file>
-        <file>images/bottomFour/机油白/7___3.png</file>
-        <file>images/bottomFour/机油白/8___3.png</file>
-        <file>images/bottomFour/冷却液白/1_副本___4.png</file>
-        <file>images/bottomFour/冷却液白/2_副本___4.png</file>
-        <file>images/bottomFour/冷却液白/3_副本___5.png</file>
-        <file>images/bottomFour/冷却液白/4_副本___5.png</file>
-        <file>images/bottomFour/冷却液白/5_副本___5.png</file>
-        <file>images/bottomFour/冷却液白/6_副本___5.png</file>
-        <file>images/bottomFour/冷却液白/7_副本___5.png</file>
-        <file>images/bottomFour/冷却液白/8_副本___5.png</file>
+        <file>images/bottomFour/icon444/1____2.png</file>
+        <file>images/bottomFour/icon444/2____2.png</file>
+        <file>images/bottomFour/icon444/3____2.png</file>
+        <file>images/bottomFour/icon444/4____2.png</file>
+        <file>images/bottomFour/icon444/5____2.png</file>
+        <file>images/bottomFour/icon444/6____2.png</file>
+        <file>images/bottomFour/icon444/7____2.png</file>
+        <file>images/bottomFour/icon444/8____2.png</file>
+        <file>images/bottomFour/icon111/1____4.png</file>
+        <file>images/bottomFour/icon111/2____4.png</file>
+        <file>images/bottomFour/icon111/3____5.png</file>
+        <file>images/bottomFour/icon111/4____5.png</file>
+        <file>images/bottomFour/icon111/5____5.png</file>
+        <file>images/bottomFour/icon111/6____5.png</file>
+        <file>images/bottomFour/icon111/7____5.png</file>
+        <file>images/bottomFour/icon111/8____5.png</file>
+        <file>images/bottomFour/icon333/1___1.png</file>
+        <file>images/bottomFour/icon333/2___1.png</file>
+        <file>images/bottomFour/icon333/3___1.png</file>
+        <file>images/bottomFour/icon333/4___1.png</file>
+        <file>images/bottomFour/icon333/5___1.png</file>
+        <file>images/bottomFour/icon333/6___1.png</file>
+        <file>images/bottomFour/icon333/7___1.png</file>
+        <file>images/bottomFour/icon333/8___1.png</file>
+        <file>images/bottomFour/icon222/1___4.png</file>
+        <file>images/bottomFour/icon222/2___4.png</file>
+        <file>images/bottomFour/icon222/3___4.png</file>
+        <file>images/bottomFour/icon222/4___4.png</file>
+        <file>images/bottomFour/icon222/5___4.png</file>
+        <file>images/bottomFour/icon222/6___4.png</file>
+        <file>images/bottomFour/icon222/7___3.png</file>
+        <file>images/bottomFour/icon222/8___3.png</file>
     </qresource>
 </RCC>

@@ -674,7 +674,7 @@ Item {
             x: 831
             y: 243
             opacity: chargeErrValue == 1 ? 1.0 : 0.0
-            source: "qrc:/images/images/charge/充电图标.png"
+            source: "qrc:/images/images/charge/iconCharge.png"
         }
         Image {
             id: chargeOutLine
@@ -807,56 +807,56 @@ Item {
                 x: 312
                 y: 669
                 opacity: valueFule >= 1 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/8___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/8___1.png"
             }
             Image {
                 id: i7___1
                 x: 284
                 y: 664
                 opacity: valueFule >= 2 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/7___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/7___1.png"
             }
             Image {
                 id: i6___1
                 x: 260
                 y: 657
                 opacity: valueFule >= 3 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/6___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/6___1.png"
             }
             Image {
                 id: i5___1
                 x: 235
                 y: 648
                 opacity: valueFule >= 4 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/5___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/5___1.png"
             }
             Image {
                 id: i4___1
                 x: 208
                 y: 637
                 opacity: valueFule >= 5 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/4___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/4___1.png"
             }
             Image {
                 id: i3___1
                 x: 185
                 y: 625
                 opacity: valueFule >= 6 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/3___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/3___1.png"
             }
             Image {
                 id: i2___1
                 x: 162
                 y: 610
                 opacity: valueFule >= 7 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/2___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/2___1.png"
             }
             Image {
                 id: i1___1
                 x: 145
                 y: 596
                 opacity: valueFule >= 8 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/油量白/1___1.png"
+                source: "qrc:/images/images/bottomFour/icon333/1___1.png"
             }
 
         }
@@ -870,181 +870,181 @@ Item {
                 x: 1509
                 y: 668
                 opacity: valueWaterTemp >= 1 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/8___3.png"
+                source: "qrc:/images/images/bottomFour/icon222/8___3.png"
             }
             Image {
                 id: i7___3
                 x: 1480
                 y: 664
                 opacity: valueWaterTemp >= 2 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/7___3.png"
+                source: "qrc:/images/images/bottomFour/icon222/7___3.png"
             }
             Image {
                 id: i6___4
                 x: 1456
                 y: 658
                 opacity: valueWaterTemp >= 3 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/6___4.png"
+                source: "qrc:/images/images/bottomFour/icon222/6___4.png"
             }
             Image {
                 id: i5___4
                 x: 1431
                 y: 650
                 opacity: valueWaterTemp >= 4 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/5___4.png"
+                source: "qrc:/images/images/bottomFour/icon222/5___4.png"
             }
             Image {
                 id: i4___4
                 x: 1404
                 y: 640
                 opacity: valueWaterTemp >= 5 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/4___4.png"
+                source: "qrc:/images/images/bottomFour/icon222/4___4.png"
             }
             Image {
                 id: i3___4
                 x: 1381
                 y: 628
                 opacity: valueWaterTemp >= 6 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/3___4.png"
+                source: "qrc:/images/images/bottomFour/icon222/3___4.png"
             }
             Image {
                 id: i2___4
                 x: 1358
                 y: 614
                 opacity: valueWaterTemp >= 7 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/2___4.png"
+                source: "qrc:/images/images/bottomFour/icon222/2___4.png"
             }
             Image {
                 id: i1___4
                 x: 1341
                 y: 600
                 opacity: valueWaterTemp >= 8 * (130 - 50) / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/机油白/1___4.png"
+                source: "qrc:/images/images/bottomFour/icon222/1___4.png"
             }
 
         }
 
-        // module 电量白
+        // module icon444
         Item {
             id: batteryPower
 
             Image {
-                id: i8_副本___2
+                id: i8____2
                 x: 375
                 y: 669
                 opacity: valueBatteryPower >= 1 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/8_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/8____2.png"
             }
             Image {
-                id: i7_副本___2
+                id: i7____2
                 x: 399
                 y: 664
                 opacity: valueBatteryPower >= 2 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/7_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/7____2.png"
             }
             Image {
-                id: i6_副本___2
+                id: i6____2
                 x: 425
                 y: 657
                 opacity: valueBatteryPower >= 3 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/6_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/6____2.png"
             }
             Image {
-                id: i5_副本___2
+                id: i5____2
                 x: 450
                 y: 649
                 opacity: valueBatteryPower >= 4 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/5_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/5____2.png"
             }
             Image {
-                id: i4_副本___2
+                id: i4____2
                 x: 474
                 y: 638
                 opacity: valueBatteryPower >= 5 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/4_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/4____2.png"
             }
             Image {
-                id: i3_副本___2
+                id: i3____2
                 x: 499
                 y: 626
                 opacity: valueBatteryPower >= 6 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/3_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/3____2.png"
             }
             Image {
-                id: i2_副本___2
+                id: i2____2
                 x: 520
                 y: 612
                 opacity: valueBatteryPower >= 7 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/2_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/2____2.png"
             }
             Image {
-                id: i1_副本___2
+                id: i1____2
                 x: 542
                 y: 598
                 opacity: valueBatteryPower >= 8 * 100 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/电量白/1_副本___2.png"
+                source: "qrc:/images/images/bottomFour/icon444/1____2.png"
             }
         }
 
-        // module 冷却液白
+        // module icon111
         Item {
             id: engineCoolantCurrentTemp
 
             Image {
-                id: i8_副本___5
+                id: i8____5
                 x: 1573
                 y: 669
                 opacity: vEngineCoolantCurrentTemp >= 1 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/8_副本___5.png"
+                source: "qrc:/images/images/bottomFour/icon111/8____5.png"
             }
             Image {
-                id: i7_副本___5
+                id: i7____5
                 x: 1597
                 y: 664
                 opacity: vEngineCoolantCurrentTemp >= 2 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/7_副本___5.png"
+                source: "qrc:/images/images/bottomFour/icon111/7____5.png"
             }
             Image {
-                id: i6_副本___5
+                id: i6____5
                 x: 1622
                 y: 658
                 opacity: vEngineCoolantCurrentTemp >= 3 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/6_副本___5.png"
+                source: "qrc:/images/images/bottomFour/icon111/6____5.png"
             }
             Image {
-                id: i5_副本___5
+                id: i5____5
                 x: 1647
                 y: 649
                 opacity: vEngineCoolantCurrentTemp >= 4 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/5_副本___5.png"
+                source: "qrc:/images/images/bottomFour/icon111/5____5.png"
             }
             Image {
-                id: i4_副本___5
+                id: i4____5
                 x: 1671
                 y: 638
                 opacity: vEngineCoolantCurrentTemp >= 5 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/4_副本___5.png"
+                source: "qrc:/images/images/bottomFour/icon111/4____5.png"
             }
             Image {
-                id: i3_副本___5
+                id: i3____5
                 x: 1696
                 y: 626
                 opacity: vEngineCoolantCurrentTemp >= 6 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/3_副本___5.png"
+                source: "qrc:/images/images/bottomFour/icon111/3____5.png"
             }
             Image {
-                id: i2_副本___4
+                id: i2____4
                 x: 1717
                 y: 611
                 opacity: vEngineCoolantCurrentTemp >= 7 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/2_副本___4.png"
+                source: "qrc:/images/images/bottomFour/icon111/2____4.png"
             }
             Image {
-                id: i1_副本___4
+                id: i1____4
                 x: 1739
                 y: 598
                 opacity: vEngineCoolantCurrentTemp >= 8 * 189 / 8 ? 1.0 : 0.0
-                source: "qrc:/images/images/bottomFour/冷却液白/1_副本___4.png"
+                source: "qrc:/images/images/bottomFour/icon111/1____4.png"
             }
         }
     }
