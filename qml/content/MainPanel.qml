@@ -359,7 +359,7 @@ Item {
         Text {
             id: displayContent1
             x: 970
-            y: 274
+            y: 266
             font.italic: true
             font.pixelSize: 28
             color: "white"
@@ -375,7 +375,7 @@ Item {
         Text {
             id: displayContent2
             x: 970
-            y: 344
+            y: 336
             font.italic: true
             font.pixelSize: 28
             color: "white"
@@ -391,7 +391,7 @@ Item {
         Text {
             id: displayContent3
             x: 965
-            y: 419
+            y: 411
             font.italic: true
             font.pixelSize: 28
             color: "white"
@@ -477,7 +477,7 @@ Item {
         Text {
             id: numTemp
             x: 1324
-            y: 25
+            y: 20
             font.italic: true
             font.bold: true
             font.pixelSize: 28
@@ -505,7 +505,7 @@ Item {
         Text {
             id: numTime
             x: 562
-            y: 25
+            y: 20
             font.italic: true
             font.bold: true
             font.pixelSize: 28
@@ -545,7 +545,7 @@ Item {
             id: numTrip
             anchors.right: kMleft.left
             anchors.rightMargin: 3
-            y: 604
+            y: 600
             color: "black"
             font.italic: true
             font.pixelSize: 28
@@ -563,7 +563,7 @@ Item {
             id: numTotalMileage
             anchors.right: kMright.left
             anchors.rightMargin: 3
-            y: 605
+            y: 600
             color: "black"
             font.italic: true
             font.pixelSize: 28
@@ -869,56 +869,56 @@ Item {
                 id: i8___3
                 x: 1509
                 y: 668
-                opacity: valueWaterTemp >= 1 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 1 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/8___3.png"
             }
             Image {
                 id: i7___3
                 x: 1480
                 y: 664
-                opacity: valueWaterTemp >= 2 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 2 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/7___3.png"
             }
             Image {
                 id: i6___4
                 x: 1456
                 y: 658
-                opacity: valueWaterTemp >= 3 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 3 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/6___4.png"
             }
             Image {
                 id: i5___4
                 x: 1431
                 y: 650
-                opacity: valueWaterTemp >= 4 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 4 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/5___4.png"
             }
             Image {
                 id: i4___4
                 x: 1404
                 y: 640
-                opacity: valueWaterTemp >= 5 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 5 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/4___4.png"
             }
             Image {
                 id: i3___4
                 x: 1381
                 y: 628
-                opacity: valueWaterTemp >= 6 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 6 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/3___4.png"
             }
             Image {
                 id: i2___4
                 x: 1358
                 y: 614
-                opacity: valueWaterTemp >= 7 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 7 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/2___4.png"
             }
             Image {
                 id: i1___4
                 x: 1341
                 y: 600
-                opacity: valueWaterTemp >= 8 * (130 - 50) / 8 ? 1.0 : 0.0
+                opacity: valueWaterTemp >= 50 + 8 * (130 - 50) / 8 ? 1.0 : 0.0
                 source: "qrc:/images/images/bottomFour/icon222/1___4.png"
             }
 
