@@ -61,10 +61,10 @@ Item {
 
     Image {
         id: background
-        x: -44
+        x: 0//-44
         y: 0
         opacity: 1.0
-        source: "qrc:/images/images/background.png"
+        source: "qrc:/images/images/Bk.jpg"//"qrc:/images/images/background.png"
     }
 
 

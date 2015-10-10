@@ -53,7 +53,6 @@
         <file>images/carDoorState/rightFrontDoorOpen.png</file>
         <file>images/carDoorState/carPic.png</file>
         <file>images/warnBackground.png</file>
-        <file>images/background.png</file>
         <file>images/num/POINT.png</file>
         <file>images/num/0.png</file>
         <file>images/num/9.png</file>
@@ -135,5 +134,6 @@
         <file>images/bottomFour/icon222/6___4.png</file>
         <file>images/bottomFour/icon222/7___3.png</file>
         <file>images/bottomFour/icon222/8___3.png</file>
+        <file>images/Bk.jpg</file>
     </qresource>
 </RCC>
