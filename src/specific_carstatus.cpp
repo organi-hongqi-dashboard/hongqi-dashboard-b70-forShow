@@ -318,6 +318,6 @@ void SpecificCarStatus::timerEvent(QTimerEvent *event)
 {
     Q_UNUSED(event);
     sendSettingsFrame();
-    sendSpecSettingsFrame();
+    //sendSpecSettingsFrame();
 }
 #endif
