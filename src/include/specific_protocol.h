@@ -14,19 +14,18 @@ typedef struct {
         fogRearLamp             : 1,
         highBeamLight           : 1,
         dippedHeadlight         : 1,
-        airBag                  : 1,
-        masterStrapLight        : 1;
+        airBag                  : 2;
     uint8_t
-        viceStrapLight          : 1,
+        displayMode          : 1,     // 0: normal mode;   1: charge mode
         parkingBrakeErr         : 1,
         parkingBrake            : 1,
         accumulatorLight        : 1,
         absLight                : 1,
         positionLight           : 1,
-        oilPressureLight        : 1,
+        reserve2        : 1,
         engineErrLight          : 1;
     uint8_t
-        epsFault                : 1,
+        reserve3                : 1,
         gearBoxFault            : 1,
         tirePressure            : 1,
         epc                     : 1,
@@ -45,6 +44,11 @@ typedef struct {
         coolantCurrentTemp;
     uint8_t
         generatorPower;
+    uint8_t
+        seatBeltLight        : 2,
+        epsFault                : 2,
+        oilPressureLight        : 2,
+        reserve4        : 2;
 }__attribute__((packed)) SpecialInfo;
 
 /*

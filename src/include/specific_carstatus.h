@@ -19,20 +19,16 @@ class SpecificCarStatus : public CarStatus
     Q_PROPERTY(bool fogRearLamp MEMBER m_fogRearLamp NOTIFY fogRearLampChanged)
     Q_PROPERTY(bool highBeamLight MEMBER m_highBeamLight NOTIFY highBeamLightChanged)
     Q_PROPERTY(bool dippedHeadlight MEMBER m_dippedHeadlight NOTIFY dippedHeadlightChanged)
-    Q_PROPERTY(bool airBag MEMBER m_airBag NOTIFY airBagChanged)
-    Q_PROPERTY(bool masterStrapLight MEMBER m_masterStrapLight NOTIFY masterStrapLightChanged)
 
-    Q_PROPERTY(bool viceStrapLight MEMBER m_viceStrapLight NOTIFY viceStrapLightChanged)
     Q_PROPERTY(bool parkingBrakeErr MEMBER m_parkingBrakeErr NOTIFY parkingBrakeErrChanged)
     Q_PROPERTY(bool parkingBrake MEMBER m_parkingBrake NOTIFY parkingBrakeChanged)
     Q_PROPERTY(bool accumulatorLight MEMBER m_accumulatorLight NOTIFY accumulatorLightChanged)
     Q_PROPERTY(bool absLight MEMBER m_absLight NOTIFY absLightChanged)
     Q_PROPERTY(bool positionLight MEMBER m_positionLight NOTIFY positionLightChanged)
-    Q_PROPERTY(bool oilPressureLight MEMBER m_oilPressureLight NOTIFY oilPressureLightChanged)
     Q_PROPERTY(bool engineErrLight MEMBER m_engineErrLight NOTIFY engineErrLightChanged)
 
 
-    Q_PROPERTY(bool epsFault MEMBER m_epsFault NOTIFY epsFaultChanged)
+    Q_PROPERTY(bool displayMode MEMBER m_displayMode NOTIFY displayModeChanged)
     Q_PROPERTY(bool gearBoxFault MEMBER m_gearBoxFault NOTIFY gearBoxFaultChanged)
     Q_PROPERTY(bool tirePressure MEMBER m_tirePressure NOTIFY tirePressureChanged)
     Q_PROPERTY(bool epc MEMBER m_epc NOTIFY epcChanged)
@@ -50,6 +46,12 @@ class SpecificCarStatus : public CarStatus
     Q_PROPERTY(int chargeState MEMBER m_chargeState NOTIFY chargeStateChanged)
     Q_PROPERTY(int coolantCurrentTemp MEMBER m_coolantCurrentTemp NOTIFY coolantCurrentTempChanged)
     Q_PROPERTY(int generatorPower MEMBER m_generatorPower NOTIFY generatorPowerChanged)
+
+
+    Q_PROPERTY(int airBag MEMBER m_airBag NOTIFY airBagChanged)
+    Q_PROPERTY(int seatBeltLight MEMBER m_seatBeltLight NOTIFY seatBeltLightChanged)
+    Q_PROPERTY(int epsFault MEMBER m_epsFault NOTIFY epsFaultChanged)
+    Q_PROPERTY(int oilPressureLight MEMBER m_oilPressureLight NOTIFY oilPressureLightChanged)
 
     // Special SettingsInfo
 
@@ -80,20 +82,15 @@ signals:
     void fogRearLampChanged(bool);
     void highBeamLightChanged(bool);
     void dippedHeadlightChanged(bool);
-    void airBagChanged(bool);
-    void masterStrapLightChanged(bool);
 
-    void viceStrapLightChanged(bool);
     void parkingBrakeErrChanged(bool);
     void parkingBrakeChanged(bool);
     void accumulatorLightChanged(bool);
     void absLightChanged(bool);
     void positionLightChanged(bool);
-    void oilPressureLightChanged(bool);
     void engineErrLightChanged(bool);
 
-
-    void epsFaultChanged(bool);
+    void displayModeChanged(bool);
     void gearBoxFaultChanged(bool);
     void tirePressureChanged(bool);
     void epcChanged(bool);
@@ -111,6 +108,11 @@ signals:
     void chargeStateChanged(uint);
     void coolantCurrentTempChanged(int);
     void generatorPowerChanged(int);
+
+    void airBagChanged(int);
+    void seatBeltLightChanged(int);
+    void oilPressureLightChanged(int);
+    void epsFaultChanged(int);
 
 #ifdef DEBUG
     void leftButtonChanged(bool);
@@ -146,20 +148,15 @@ protected:
     bool m_fogRearLamp;
     bool m_highBeamLight;
     bool m_dippedHeadlight;
-    bool m_airBag;
-    bool m_masterStrapLight;
 
-    bool m_viceStrapLight;
     bool m_parkingBrakeErr;
     bool m_parkingBrake;
     bool m_accumulatorLight;
     bool m_absLight;
     bool m_positionLight;
-    bool m_oilPressureLight;
     bool m_engineErrLight;
 
-
-    bool m_epsFault;
+    bool m_displayMode;
     bool m_gearBoxFault;
     bool m_tirePressure;
     bool m_epc;
@@ -177,6 +174,11 @@ protected:
     uint m_chargeState;
     int m_coolantCurrentTemp;
     int m_generatorPower;
+
+    int m_airBag;
+    int m_seatBeltLight;
+    int m_oilPressureLight;
+    int m_epsFault;
 
     // Special SettingsInfo
 

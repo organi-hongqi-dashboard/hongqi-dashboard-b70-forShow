@@ -54,7 +54,6 @@
         <file>images/carDoorState/carPic.png</file>
         <file>images/warnBackground.png</file>
         <file>images/background.png</file>
-        <file>images/num/POINT.png</file>
         <file>images/num/0.png</file>
         <file>images/num/9.png</file>
         <file>images/num/8.png</file>
@@ -135,5 +134,21 @@
         <file>images/bottomFour/icon222/6___4.png</file>
         <file>images/bottomFour/icon222/7___3.png</file>
         <file>images/bottomFour/icon222/8___3.png</file>
+        <file>images/backgroundBattery.png</file>
+        <file>images/battery/chargeComplete.png</file>
+        <file>images/battery/charging.png</file>
+        <file>images/battery/chargReady.png</file>
+        <file>images/num/9_green.png</file>
+        <file>images/num/8_green.png</file>
+        <file>images/num/7_green.png</file>
+        <file>images/num/6_green.png</file>
+        <file>images/num/5_green.png</file>
+        <file>images/num/4_green.png</file>
+        <file>images/num/3_green.png</file>
+        <file>images/num/2_green.png</file>
+        <file>images/num/1_green.png</file>
+        <file>images/num/0_green.png</file>
+        <file>images/displayWindow/lPerKm.png</file>
+        <file>images/displayWindow/lPerH.png</file>
     </qresource>
 </RCC>

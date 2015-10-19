@@ -219,8 +219,8 @@ protected:
     uint m_soc;
     uint m_maintenanceMileage;
     qreal m_outTemp;
-    uint m_avgFuel;
-    qreal m_instantaneousFuel;
+    uint16_t m_avgFuel;
+    uint16_t m_instantaneousFuel;
     qreal m_batteryCurrent;
     qreal m_batteryVoltage;
 

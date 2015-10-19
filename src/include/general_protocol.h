@@ -89,7 +89,9 @@ typedef struct {
         remain2: 1;              // byte12: 7
     uint32_t odo: 24,            // byte13: 0 ~ 23
         avgSpeed: 8;             // byte16: 24 ~ 31
-    uint8_t remain3;             // byte17: 0 ~ 15
+    uint8_t avgFuelUnit: 1,            // byte17: 0 ~ 15
+        instantaneousFuelUnit: 1,
+        remain3: 6;
     uint16_t remainMileage;      // byte18: 0 ~ 15
     uint32_t trip1: 24,          // byte20: 0 ~ 23
         fuel: 8;                 // byte23: 24 ~ 31
@@ -97,8 +99,10 @@ typedef struct {
         soc: 8;                  // byte27: 24 ~ 31
     uint16_t maintenanceMileage; // byte28: 0 ~ 15
     uint16_t outTemp;            // byte30: 0 ~ 15
-    uint16_t avgFuel;            // byte32: 0 ~ 15
-    uint16_t instantaneousFuel;  // byte34: 0 ~ 15
+    uint16_t
+        avgFuel;            // byte32: 0 ~ 15
+    uint16_t
+        instantaneousFuel;// byte34: 0 ~ 15
     uint16_t batteryCurrent;     // byte36: 0 ~ 15
     uint16_t batteryVoltage;     // byte38: 0 ~ 15
 }__attribute__((packed)) GeneralInfo;

@@ -23,20 +23,17 @@ void SpecificCarStatus::initValues()
     m_fogRearLamp = false;
     m_highBeamLight = false;
     m_dippedHeadlight = false;
-    m_airBag = false;
-    m_masterStrapLight = false;
+    m_airBag = 0;
 
-    m_viceStrapLight = false;
+    m_displayMode = false;
     m_parkingBrakeErr = false;
     m_parkingBrake = false;
     m_accumulatorLight = false;
     m_absLight = false;
     m_positionLight = false;
-    m_oilPressureLight = false;
     m_engineErrLight = false;
 
 
-    m_epsFault = false;
     m_gearBoxFault = false;
     m_tirePressure = false;
     m_epc = false;
@@ -54,6 +51,10 @@ void SpecificCarStatus::initValues()
     m_chargeState = 0;
     m_coolantCurrentTemp = 0;
     m_generatorPower = 0;
+
+    m_seatBeltLight = 0;
+    m_oilPressureLight = 0;
+    m_epsFault = 0;
 
     // Special SettingsInfo
 //    m_commandRequest = false;
@@ -104,7 +105,7 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         BoolValueChangeSet(doorWarningLight, data.doorWarningLight);
         NumValueErrChangeSet(odo, data.odo, (uint32_t) 0, (uint32_t) 999999, 0xFFFFFF);
         NumValueChangeSet(avgSpeed, data.avgSpeed, (uint32_t) 0, (uint32_t) 240);
-        NumValueErrChangeSet(remainMileage, data.remainMileage, (uint16_t) 50, (uint16_t) 999, 0xFFFF);
+        NumValueErrChangeSet(remainMileage, data.remainMileage, (uint16_t) 0, (uint16_t) 999, 0xFFFF);
         NumValueErrChangeSet(trip1, data.trip1, (uint32_t) 0, (uint32_t) 9999, 0xFFFFFF);
         NumValueChangeSet(fuel, data.fuel, (uint32_t) 0, (uint32_t) 100);
         NumValueErrChangeSet(trip2, data.trip2, (uint32_t) 0, (uint32_t) 9999, 0xFFFFFF);
@@ -112,7 +113,9 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         NumValueChangeSet(maintenanceMileage, data.maintenanceMileage, (uint16_t) 0, (uint16_t) 50000);
         NumValueChangeSet(outTemp, data.outTemp * 0.1 + (-40), (double) -40, (double) 164.5);
         NumValueErrChangeSet(avgFuel, data.avgFuel, (uint16_t)0, (uint16_t) 300, 0xFFFF);
-        NumValueChangeSet(instantaneousFuel, data.instantaneousFuel * 0.1 + 0, (double) 0, (double) 45);
+        BoolValueChangeSet(avgFuelUnit, data.avgFuelUnit);
+        NumValueErrChangeSet(instantaneousFuel, data.instantaneousFuel, (uint16_t) 0, (uint16_t) 450, 0xFFFF);
+        BoolValueChangeSet(instantaneousFuelUnit, data.instantaneousFuelUnit);
         NumValueChangeSet(batteryCurrent, data.batteryCurrent * 0.1 + (-500), (double)0, (double) 2000);
         NumValueChangeSet(batteryVoltage, data.batteryVoltage * 0.1 + 0, (double) 0, (double) 100);
 
@@ -147,19 +150,16 @@ void SpecificCarStatus::getSpecialSerial(SpecialInfo data)
         BoolValueChangeSet(fogRearLamp, data.fogRearLamp);
         BoolValueChangeSet(highBeamLight, data.highBeamLight);
         BoolValueChangeSet(dippedHeadlight, data.dippedHeadlight);
-        BoolValueChangeSet(airBag, data.airBag);
-        BoolValueChangeSet(masterStrapLight, data.masterStrapLight);
+        NumValueChangeSet(airBag, data.airBag, (uint8_t) 0, (uint8_t) 3);
 
-        BoolValueChangeSet(viceStrapLight, data.viceStrapLight);
+        BoolValueChangeSet(displayMode, data.displayMode);
         BoolValueChangeSet(parkingBrakeErr, data.parkingBrakeErr);
         BoolValueChangeSet(parkingBrake, data.parkingBrake);
         BoolValueChangeSet(accumulatorLight, data.accumulatorLight);
         BoolValueChangeSet(absLight, data.absLight);
         BoolValueChangeSet(positionLight, data.positionLight);
-        BoolValueChangeSet(oilPressureLight, data.oilPressureLight);
         BoolValueChangeSet(engineErrLight, data.engineErrLight);
 
-        BoolValueChangeSet(epsFault, data.epsFault);
         BoolValueChangeSet(gearBoxFault, data.gearBoxFault);
         BoolValueChangeSet(tirePressure, data.tirePressure);
         BoolValueChangeSet(epc, data.epc);
@@ -174,11 +174,15 @@ void SpecificCarStatus::getSpecialSerial(SpecialInfo data)
         BoolValueChangeSet(dynamicElectricityCut, data.dynamicElectricityCut);
         BoolValueChangeSet(ready, data.ready);
 
-        NumValueChangeSet(chargeState, data.chargeState, (uint8_t) 0, (uint8_t) 7);
+        NumValueChangeSet(chargeState, data.chargeState, (uint8_t) 0, (uint8_t) 4);
         NumValueChangeSet(coolantCurrentTemp, data.coolantCurrentTemp, (uint8_t) 0, (uint8_t) 200);
 //        m_coolantCurrentTemp = data.coolantCurrentTemp;
 //        emit coolantCurrentTempChanged(data.coolantCurrentTemp);
-        NumValueChangeSet(generatorPower, data.generatorPower - 20, (int) -20, (int) 100);
+        NumValueChangeSet(generatorPower, data.generatorPower - 20, (int) -20, (int) 200);
+
+        NumValueChangeSet(seatBeltLight, data.seatBeltLight, (uint8_t) 0, (uint8_t) 3);
+        NumValueChangeSet(oilPressureLight, data.oilPressureLight, (uint8_t) 0, (uint8_t) 3);
+        NumValueChangeSet(epsFault, data.epsFault, (uint8_t) 0, (uint8_t) 3);
     }
 }
 
@@ -318,6 +322,6 @@ void SpecificCarStatus::timerEvent(QTimerEvent *event)
 {
     Q_UNUSED(event);
     sendSettingsFrame();
-    sendSpecSettingsFrame();
+    //sendSpecSettingsFrame();
 }
 #endif
