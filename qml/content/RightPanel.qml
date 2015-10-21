@@ -7,15 +7,21 @@ Rectangle {
         id: speedDisk
 	}
 
-    RightInfo {
-        id: rightInfo
-    }
-
-    OilBar {
-        id: oilBar
-	}
 
     WaterTempBar {
         id: waterTempBar
     }
+
+    states: [
+        State {
+            name: ""
+            PropertyChanges { target: speedDisk; state: ""}
+            PropertyChanges { target: waterTempBar; state: "" }
+        },
+        State {
+            name: "show"
+            PropertyChanges { target: speedDisk; state: "show" }
+            PropertyChanges { target: waterTempBar; state: "show" }
+        }
+    ]
 }

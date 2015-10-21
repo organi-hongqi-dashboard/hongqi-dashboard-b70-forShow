@@ -2,49 +2,69 @@ import QtQuick 2.2
 
 Rectangle {
     id: oilPanel
-    y: 210
 
-    Image {
-        id: oilBlack2
-        x: 1625
-        y: 562
-        opacity: 1.0
-        source: "qrc:/rightPanel/images/rightPanel/oilPanel/oilBlack2.png"
-    }
-    Image {
-        id: oilBlack1
-        x: 1583
-        y: 570
-        opacity: 1.0
-        source: "qrc:/rightPanel/images/rightPanel/oilPanel/oilBlack1.png"
-    }
-    Image {
-        id: oilWhite3
-        x: 1495
-        y: 536
-        opacity: 1.0
-        source: "qrc:/rightPanel/images/rightPanel/oilPanel/oilWhite3.png"
-    }
-    Image {
-        id: oilWhite2
-        x: 1452
-        y: 532
-        opacity: 1.0
-        source: "qrc:/rightPanel/images/rightPanel/oilPanel/oilWhite2.png"
-    }
-    Image {
-        id: oilWhite1
-        x: 1413
-        y: 523
-        opacity: 1.0
-        source: "qrc:/rightPanel/images/rightPanel/oilPanel/oilWhite1.png"
-    }
-    Image {
-        id: oilBg
-        x: 1443
-        y: 526
-        opacity: 1.0
-        source: "qrc:/rightPanel/images/rightPanel/oilPanel/oilBg.png"
+    property int valueFule: CarStatus.fuel
+
+    Item {
+        id: numFule
+
+        Image {
+            id: i8___1
+            x: 312
+            y: 669
+            opacity: valueFule >= 8 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/8___1.png"
+        }
+        Image {
+            id: i7___1
+            x: 284
+            y: 664
+            opacity: valueFule >= 7 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/7___1.png"
+        }
+        Image {
+            id: i6___1
+            x: 260
+            y: 657
+            opacity: valueFule >= 6 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/6___1.png"
+        }
+        Image {
+            id: i5___1
+            x: 235
+            y: 648
+            opacity: valueFule >= 5 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/5___1.png"
+        }
+        Image {
+            id: i4___1
+            x: 208
+            y: 637
+            opacity: valueFule >= 4 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/4___1.png"
+        }
+        Image {
+            id: i3___1
+            x: 185
+            y: 625
+            opacity: valueFule >= 3 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/3___1.png"
+        }
+        Image {
+            id: i2___1
+            x: 162
+            y: 610
+            opacity: valueFule >= 2 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/2___1.png"
+        }
+        Image {
+            id: i1___1
+            x: 145
+            y: 596
+            opacity: valueFule >= 1 * 100 / 8 ? 1.0 : 0.0
+            source: "qrc:/images/images/bottomFour/icon333/1___1.png"
+        }
+
     }
 
     states: [
@@ -72,7 +92,7 @@ Rectangle {
             }
         }
     ]
-    Component.onCompleted: {
-        oilPanel.state = "show"
-    }
+//    Component.onCompleted: {
+//        oilPanel.state = "show"
+//    }
 }

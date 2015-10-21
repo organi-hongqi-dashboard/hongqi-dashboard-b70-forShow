@@ -9,7 +9,7 @@ Item {
 
 	Image {
 		id: spinnerImage
-		source: "qrc:/common/images/common/spinner.png"
+        source: "qrc:/images/images/spinner.png"
 		NumberAnimation on rotation {
 			from:0
 			to: 360

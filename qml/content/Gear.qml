@@ -7,41 +7,45 @@ Item {
     width: 0
     height: 0
 
+    property int valueGear: CarStatus.gear
+    property int valueGearMode: CarStatus.gearMode
+
     Image {
-        id: gearBg
+        id: gearOutline
         x: 839
         y: 587
         opacity: 1.0
-        source: "qrc:/gearPanel/images/gearPanel/gearBg.png"
-    }
-    Image {
-        id: gearR
-        x: 892
-        y: 596
-        opacity: 1.0
-        source: "qrc:/gearPanel/images/gearPanel/gearR.png"
+        source: "qrc:/images/images/gear/gearOutline.png"
     }
     Image {
         id: gearD
-        x: 1027
-        y: 596
-        opacity: 1.0
-        source: "qrc:/gearPanel/images/gearPanel/gearD.png"
+        x: 885
+        y: 535
+        opacity: valueGearMode == 0x01 ? 1.0 : 0.0
+        source: "qrc:/images/images/gear/gearD.png"
     }
     Image {
         id: gearN
-        x: 983
-        y: 596
-        opacity: 1.0
-        source: "qrc:/gearPanel/images/gearPanel/gearN.png"
+        x: 884
+        y: 536
+        opacity: (valueGearMode == 0 && valueGear == 0x0e) ? 1.0 : 0.0
+        source: "qrc:/images/images/gear/gearN.png"
+    }
+    Image {
+        id: gearR
+        x: 887
+        y: 535
+        opacity: (valueGearMode == 0 && valueGear == 0x0f) ? 1.0 : 0.0
+        source: "qrc:/images/images/gear/gearR.png"
     }
     Image {
         id: gearP
-        x: 942
-        y: 596
-        opacity: 1.0
-        source: "qrc:/gearPanel/images/gearPanel/gearP.png"
+        x: 888
+        y: 535
+        opacity: (valueGearMode == 0 && valueGear == 0) ? 1.0 : 0.0
+        source: "qrc:/images/images/gear/gearP.png"
     }
+
 
     states: [
         State {

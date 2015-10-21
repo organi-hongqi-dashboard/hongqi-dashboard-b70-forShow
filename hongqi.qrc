@@ -10,18 +10,18 @@
         <file>qml/content/DigitValue.qml</file>
         <file>qml/content/CentrePanel.qml</file>
         <file>qml/content/Fps.qml</file>
-        <file>qml/content/RightInfo.qml</file>
-        <file>qml/content/LeftInfo.qml</file>
         <file>qml/content/WaterTempBar.qml</file>
         <file>qml/content/SpeedDisk.qml</file>
         <file>qml/content/SocBar.qml</file>
-        <file>qml/content/RpmDisk.qml</file>
-        <file>qml/content/PowerKwBar.qml</file>
+        <file>qml/content/PowerKw.qml</file>
         <file>qml/content/OilBar.qml</file>
-        <file>qml/content/CarInfo.qml</file>
-        <file>qml/content/CarFunction.qml</file>
         <file>qml/content/functionMode/FunctionMenu.qml</file>
         <file>qml/content/Gear.qml</file>
+        <file>qml/content/TipsIcon.qml</file>
+        <file>qml/content/ChargePanel.qml</file>
+        <file>qml/content/CarDoorPanel.qml</file>
+        <file>qml/content/DisplayWindow.qml</file>
+        <file>qml/content/CentreInfo.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/gear/gearP.png</file>
@@ -150,5 +150,6 @@
         <file>images/num/0_green.png</file>
         <file>images/displayWindow/lPerKm.png</file>
         <file>images/displayWindow/lPerH.png</file>
+        <file>images/spinner.png</file>
     </qresource>
 </RCC>
