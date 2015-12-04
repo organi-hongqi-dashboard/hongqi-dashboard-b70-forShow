@@ -81,8 +81,8 @@ Rectangle {
             from: ""
             to: "show"
             SequentialAnimation {
-                PauseAnimation { duration: 1100 }
-                NumberAnimation { target: oilPanel; property: "y"; from: 210; to: 0; duration: 500; easing.type: Easing.OutBounce }
+//                PauseAnimation { duration: 1100 }
+//                NumberAnimation { target: oilPanel; property: "y"; from: 210; to: 0; duration: 500; easing.type: Easing.OutBounce }
             }
         },
         Transition {
