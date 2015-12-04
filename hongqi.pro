@@ -10,9 +10,9 @@ DEFINES += HONGQI_RECV
 DEFINES += HONGQI
 DEFINES += TIMER_FREQ
 
-CONFIG(release, debug|release) {
-    DEFINES += QT_NO_DEBUG_OUTPUT
-}
+#CONFIG(release, debug|release) {
+#    DEFINES += QT_NO_DEBUG_OUTPUT
+#}
 CONFIG += qtquickcompiler
 QMAKE_DISTCLEAN += *_qtquickcompiler.qrc
 
@@ -25,7 +25,8 @@ HEADERS += \
     src/include/specific_carstatus.h \
     src/include/specific_protocol.h \
     src/include/general_carstatus.h \
-    src/include/general_protocol.h
+    src/include/general_protocol.h \
+    src/include/fontName.h
 SOURCES += $$SOURCE_FOLDER/main.cpp \
     src/specific_carstatus.cpp \
     src/general_carstatus.cpp \
@@ -66,3 +67,6 @@ UI_DIR = build
 MOC_DIR = build
 RCC_DIR = build
 OBJECTS_DIR = build
+
+DISTFILES += \
+    qml/content/MenuPanel.qml

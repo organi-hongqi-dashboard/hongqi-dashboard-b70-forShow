@@ -68,20 +68,20 @@ Item {
 //                    duration: 1300
 //                }
 
-                NumberAnimation {
-                    target: pointerRotationSpeed
-                    property: "angle"
-                    duration: 1000
-                    from: 0
-                    to: 240
-                }
-                NumberAnimation {
-                    target: pointerRotationSpeed
-                    property: "angle"
-                    duration: 1000
-                    from: 240
-                    to: 0
-                }
+//                NumberAnimation {
+//                    target: pointerRotationSpeed
+//                    property: "angle"
+//                    duration: 1000
+//                    from: 0
+//                    to: 240
+//                }
+//                NumberAnimation {
+//                    target: pointerRotationSpeed
+//                    property: "angle"
+//                    duration: 1000
+//                    from: 240
+//                    to: 0
+//                }
             }
         },
         Transition {

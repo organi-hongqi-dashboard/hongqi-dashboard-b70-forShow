@@ -13,6 +13,8 @@
 #include <QCommandLineParser>
 #include <QQmlApplicationEngine>
 
+#include <fontName.h>
+
 #define MSAA 0
 
 #if MSAA
@@ -99,10 +101,13 @@ int server_main(int argc, char *argv[])
 	QSurfaceFormat::setDefaultFormat(format);
 #endif
 
+    MFontName fontName;
+
     SpecificCarStatus CarStatus(serial);
 
 	QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("CarStatus", &CarStatus);
+    engine.rootContext()->setContextProperty("fontName", &fontName);
 //	qmlRegisterType<Ring>("Ring", 1, 0, "Ring");
 //	qmlRegisterType<HqCarStatus>("CarStatus", 1, 0, "CarStatus");
 

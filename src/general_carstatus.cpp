@@ -95,7 +95,8 @@ void CarStatus::initValues()
     m_avgFuelClean = false;
     m_projectMode = false;
     m_alarmInterface = 0;
-    m_interfaceSoundSync = 0;
+    m_leftDriveSync = 0;
+    m_rightDriveSync = 0;
     m_dateTimeSet = 0;
 }
 
@@ -263,13 +264,28 @@ void CarStatus::sendSettingsFrame()
     settingsFrame.settingsInfo.projectMode = m_projectMode;
 
     settingsFrame.settingsInfo.alarmInterface = m_alarmInterface;
-    settingsFrame.settingsInfo.interfaceSoundSync = m_interfaceSoundSync;
+    settingsFrame.settingsInfo.leftDriveSync = m_leftDriveSync;
+    settingsFrame.settingsInfo.rightDriveSync = m_rightDriveSync;
 
     if (abs(m_dateTime - m_dateTimeSet) <= 2)
         m_dateTimeSet = 0;
     else if (m_dateTimeSet > TimeSetTopLimit || m_dateTimeSet < TimeSetLowerLimit)
         m_dateTimeSet = 0;
     settingsFrame.settingsInfo.dateTimeSet = m_dateTimeSet;
+
+    /* For debug */
+#ifdef DEBUG
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_commandReq: " << m_commandReq;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_closeReq: " << m_closeReq;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_tripClean: " << m_tripClean;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_avgSpeedClean: " << m_avgSpeedClean;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_avgFuelClean: " << m_avgFuelClean;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_projectMode: " << m_projectMode;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_alarmInterface: " << m_alarmInterface;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_leftDriveSync: " << m_leftDriveSync;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_rightDriveSync: " << m_rightDriveSync;
+    qDebug() << "[" << __FILE__ << ":" << __LINE__ << "] " << "m_dateTimeSet: " << m_dateTimeSet;
+#endif
 
     settingsFrame.magic = MAGIC_GENERAL_DOWN;
 

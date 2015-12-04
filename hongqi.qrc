@@ -22,6 +22,8 @@
         <file>qml/content/CarDoorPanel.qml</file>
         <file>qml/content/DisplayWindow.qml</file>
         <file>qml/content/CentreInfo.qml</file>
+        <file>qml/content/MenuPanel.qml</file>
+        <file>qml/content/TripCleanPanel.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>images/gear/gearP.png</file>
@@ -151,5 +153,18 @@
         <file>images/displayWindow/lPerKm.png</file>
         <file>images/displayWindow/lPerH.png</file>
         <file>images/spinner.png</file>
+        <file>images/menuPanel/background.png</file>
+        <file>images/menuPanel/colon.png</file>
+        <file>images/menuPanel/hourblow.png</file>
+        <file>images/menuPanel/line.png</file>
+        <file>images/dateTime/timeIcon.png</file>
+        <file>images/lights/lrDoorWarn.png</file>
+        <file>images/lights/rrDoorWarn.png</file>
+        <file>images/lights/lfDoorWarn.png</file>
+        <file>images/lights/rfDoorWarn.png</file>
+        <file>images/menuPanel/okIcon.png</file>
+        <file>images/menuPanel/okBlow.png</file>
+        <file>images/menuPanel/cancelIcon.png</file>
+        <file>images/dateTime/tempIcon.png</file>
     </qresource>
 </RCC>

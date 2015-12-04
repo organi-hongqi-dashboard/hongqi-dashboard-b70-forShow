@@ -131,7 +131,10 @@ typedef struct {
         remain1: 2,             // byte0: 5 ~6
         projectMode: 1;         // byte0: 7
     uint8_t alarmInterface;     // byte1: 0 ~ 7
-    uint8_t interfaceSoundSync; // byte2: 0 ~ 7
+    uint8_t
+        leftDriveSync : 1,
+        rightDriveSync : 1,
+        remain3 : 6;
     uint8_t remain2;            // byte3: 0 ~ 7
     uint32_t dateTimeSet;       // byte4: 0 ~ 31
 }__attribute__((packed)) SettingsInfo;

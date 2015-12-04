@@ -16,30 +16,61 @@ Rectangle {
         Image {
             id: dateTimeOutline
             x: 513
-            y: 21
+            y: 71
             opacity: 1.0
             source: "qrc:/images/images/dateTime/dateTimeOutline.png"
         }
 
         Text {
             id: numTemp
-            x: 1324
+//            x: 1324
+            x: 1313
             //            y: 20
             y: 17
             font.italic: true
-            font.bold: true
+//            font.bold: true
             font.pixelSize: 28
             color: "white"
             text: valueTemp.toFixed(0)
+            font.family: fontName.fontCurrent
         }
         Image {
             id: iconC
             //        x: 1358
             anchors.left: numTemp.right
-            anchors.leftMargin: 3
+            anchors.leftMargin: 8
             y: 25
             opacity: 1.0
             source: "qrc:/images/images/dateTime/iconC.png"
+        }
+
+        Image {
+            id: tempIcon
+            x: 1293
+            y: 22
+            opacity: 1.0
+            source: "qrc:/images/images/dateTime/tempIcon.png"
+        }
+
+        Image {
+            id: timeIcon
+//            x: 522
+            y: 22
+            anchors.right: numTime.left
+            anchors.rightMargin: 3
+            opacity: 1.0
+            source: "qrc:/images/images/dateTime/timeIcon.png"
+        }
+        Text {
+            id: numTime
+            x: 562
+            y: 17
+            font.italic: true
+//            font.bold: true
+            font.pixelSize: 28
+            color: "white"
+            text: valueTime
+            font.family: fontName.fontCurrent
         }
     }
 
@@ -60,11 +91,12 @@ Rectangle {
             id: numTrip
             anchors.right: kMleft.left
             anchors.rightMargin: 3
-            y: 600
+            y: 597
             color: "black"
             font.italic: true
             font.pixelSize: 28
             text: valueTrip.toFixed(1)
+            font.family: fontName.fontCurrent
         }
 
         Image {
@@ -78,11 +110,12 @@ Rectangle {
             id: numTotalMileage
             anchors.right: kMright.left
             anchors.rightMargin: 3
-            y: 600
+            y: 597
             color: "black"
             font.italic: true
             font.pixelSize: 28
             text: valueTotalMileage
+            font.family: fontName.fontCurrent
         }
 
         Image {

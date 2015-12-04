@@ -70,6 +70,7 @@ void SpecificCarStatus::initValues()
     m_leftButtonStep = 0;
     m_rightButtonStep = 0;
     m_okButtonStep = 0;
+    m_okButtonStepFlag = false;
 
 #ifdef DEBUG
     m_leftButton = false;
@@ -91,6 +92,9 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         NumValueChangeSet(dateTime,data.dateTime, (uint32_t) 0, (uint32_t) 0xFFFFFFFF);
         NumValueChangeSet(speed, data.speed, (uint8_t) 0, (uint8_t) 240);
         NumValueChangeSet(waterTemp, data.waterTemp, (uint8_t) 50, (uint8_t) 130);
+        BoolValueChangeSet(key1, data.key1);
+        BoolValueChangeSet(key2, data.key2);
+        BoolValueChangeSet(key3, data.key3);
         BoolValueChangeSet(key4, data.key4);
         BoolValueChangeSet(igOn, data.igOn);
         BoolValueChangeSet(gear, data.gear);
@@ -119,19 +123,21 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         NumValueChangeSet(batteryCurrent, data.batteryCurrent * 0.1 + (-500), (double)0, (double) 2000);
         NumValueChangeSet(batteryVoltage, data.batteryVoltage * 0.1 + 0, (double) 0, (double) 100);
 
+        /* left button */
         if (m_key1 != data.key1) {
             m_key1 = data.key1;
         }
         emit key1Changed(m_key1);
-
+        /* right button */
         if (m_key2 != data.key2) {
             m_key2 = data.key2;
         }
         emit key2Changed(m_key2);
 
+        /* Ok(or switch) button */
         if (m_key3 != data.key3) {
             m_key3 = data.key3;
-        }
+        } qDebug() << "m_key3: " << m_key3;
         emit key3Changed(m_key3);
 
         updateTime(data.dateTime);
@@ -146,6 +152,9 @@ void SpecificCarStatus::getSpecialSerial(SpecialInfo data)
     if (m_active) {
         BoolValueChangeSet(leftLamp, data.leftLamp);
         BoolValueChangeSet(rightLamp, data.rightLamp);
+        /* for sound sync */
+        m_leftDriveSync = data.leftLamp;
+        m_rightDriveSync = data.rightLamp;
         BoolValueChangeSet(fogFrontLamp, data.fogFrontLamp);
         BoolValueChangeSet(fogRearLamp, data.fogRearLamp);
         BoolValueChangeSet(highBeamLight, data.highBeamLight);
@@ -265,28 +274,69 @@ void SpecificCarStatus::rightButtonDeal(bool v)
 void SpecificCarStatus::okButtonDeal(bool v)
 {
     if (m_okButtonStep == 0 && v)
+    {
         ++m_okButtonStep;
+        return;
+    }
 
     if (m_okButtonStep >= 1 && m_okButtonStep < KEY_PRESS_TIME) {
         if (!v) {
             m_okButtonStep = 0;
+            return;
         }
         ++m_okButtonStep;
     }
 
-    if (m_okButtonStep == KEY_PRESS_TIME && v) {
+//    if (m_okButtonStep == KEY_PRESS_TIME && v) {
+//        ++m_okButtonStep;
+//#ifdef DEBUG
+//    setOkButton(true);
+//#else
+//    emit okButton();
+//#endif
+//    }
+
+//    if (m_okButtonStep == KEY_PRESS_TIME + 1 && !v) {
+//        m_okButtonStep = 0;
+//#ifdef DEBUG
+//    setOkButton(false);
+//#endif
+//    }
+
+    if (m_okButtonStep >= KEY_PRESS_TIME && m_okButtonStep < KEY_LONG_TIME) {
+        if (!v) {
+            if (m_okButtonStepFlag) {
+                // the key is shortButton
+                m_okButtonStep = 0;
+
+#ifdef DEBUG
+                setOkButton(true);
+#else
+                emit okButtonShort();
+#endif
+            }
+            m_okButtonStepFlag = true;
+        }
+        else {
+            m_okButtonStepFlag = false;
+        }
+        ++m_okButtonStep;
+    }
+
+    if (m_okButtonStep == KEY_LONG_TIME && v) {
+        // the key is LongButton
         ++m_okButtonStep;
 #ifdef DEBUG
-    setOkButton(true);
+        setButtonOk("LongButton");
 #else
-    emit okButton();
+        emit okButtonLong();
 #endif
     }
 
-    if (m_okButtonStep == KEY_PRESS_TIME + 1 && !v) {
+    if (m_okButtonStep == KEY_LONG_TIME + 1 && !v) {
         m_okButtonStep = 0;
 #ifdef DEBUG
-    setOkButton(false);
+        setButtonOk("NONE");
 #endif
     }
 }

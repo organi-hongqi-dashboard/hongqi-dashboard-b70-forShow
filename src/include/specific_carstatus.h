@@ -7,6 +7,7 @@
  * times for button
  */
 #define KEY_PRESS_TIME 2     // 2 * 100ms = 200ms
+#define KEY_LONG_TIME 20		// 50 * 100ms = 5000ms
 
 class SpecificCarStatus : public CarStatus
 {
@@ -121,8 +122,13 @@ signals:
 #else
     Q_INVOKABLE void leftButton();
     Q_INVOKABLE void rightButton();
-    Q_INVOKABLE void okButton();
+    Q_INVOKABLE void okButtonShort();
+    Q_INVOKABLE void okButtonLong();
 #endif
+
+    /* Time setting */
+    void timeSettingDisplay();
+    void timeSettingHide();
 
     // Special SettingsInfo
 
@@ -189,9 +195,17 @@ protected:
     bool m_okButton;
 #endif
 
+    /* Time setting */
     uint m_leftButtonStep;
     uint m_rightButtonStep;
     uint m_okButtonStep;
+    bool m_okButtonStepFlag;
+
+    uint m_yearTemp;
+    uint m_monthTemp;
+    uint m_dayTemp;
+    uint m_hourTemp;
+    uint m_minuteTemp;
 
 protected slots:
     virtual void getGeneralSerial(GeneralInfo data);

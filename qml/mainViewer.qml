@@ -36,9 +36,9 @@ Window {
             state: ""
         }
 
-        Fps {
-            id: fps
-        }
+//        Fps {
+//            id: fps
+//        }
 
         transitions: [
             Transition {

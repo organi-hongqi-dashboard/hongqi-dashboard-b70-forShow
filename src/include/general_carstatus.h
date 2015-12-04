@@ -10,6 +10,8 @@
 #include <general_protocol.h>
 #include <specific_protocol.h>
 
+#include <stdio.h>
+
 /*
  * BoolValueChangeSet:    change recv signal value normally
  * NumValueChangeSet:     change recv signal value by range of (min, max)
@@ -98,7 +100,8 @@ class CarStatus : public QSerialPort
     Q_PROPERTY(bool avgFuelClean MEMBER m_avgFuelClean NOTIFY avgFuelCleanChanged)
     Q_PROPERTY(bool projectMode MEMBER m_projectMode NOTIFY projectModeChanged)
     Q_PROPERTY(uint alarmInterface MEMBER m_alarmInterface NOTIFY alarmInterfaceChanged)
-    Q_PROPERTY(uint interfaceSoundSync MEMBER m_interfaceSoundSync NOTIFY interfaceSoundSyncChanged)
+    Q_PROPERTY(bool leftDirveSync MEMBER m_leftDriveSync NOTIFY leftDriveSyncChanged)
+    Q_PROPERTY(bool rightDirveSync MEMBER m_rightDriveSync NOTIFY rightDriveSyncChanged)
     Q_PROPERTY(uint dateTimeSet MEMBER m_dateTimeSet NOTIFY dateTimeSetChanged)
 
     // Enable receive info from serial
@@ -167,7 +170,8 @@ signals:
     void avgFuelCleanChanged(bool);
     void projectModeChanged(bool);
     void alarmInterfaceChanged(uint);
-    void interfaceSoundSyncChanged(uint);
+    void leftDriveSyncChanged(bool);
+    void rightDriveSyncChanged(bool);
     void dateTimeSetChanged(uint);
 
 protected:
@@ -232,7 +236,8 @@ protected:
     bool m_avgFuelClean;
     bool m_projectMode;
     uint m_alarmInterface;
-    uint m_interfaceSoundSync;
+    bool m_leftDriveSync;
+    bool m_rightDriveSync;
     uint m_dateTimeSet;
 
     bool m_active;

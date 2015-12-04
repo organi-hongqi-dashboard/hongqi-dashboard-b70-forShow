@@ -53,15 +53,15 @@ Rectangle {
         }
         Image {
             id: luggageCoverOpen
-            x: 913
-            y: 494
+            x: 919
+            y: 462
             opacity: valueLuggageCover == 1 ? 1.0 : 0.0
             source: "qrc:/images/images/carDoorState/luggageCoverOpen.png"
         }
         Image {
             id: hoodOpen
             x: 901
-            y: 225
+            y: 226
             opacity: valueHood == 1 ? 1.0 : 0.0
             source: "qrc:/images/images/carDoorState/hoodOpen.png"
         }

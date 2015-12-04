@@ -60,6 +60,7 @@ Rectangle {
             color: "white"
 //                text: (avgFuelUint == 1) ? "---" : valueDisplayContent1.toFixed(1)
             text: valueDisplayContent1.toFixed(1) == 0xFFFF * 0.1 ? "---" : valueDisplayContent1.toFixed(1)
+            font.family: fontName.fontCurrent
         }
 
         Text {
@@ -72,6 +73,7 @@ Rectangle {
 //                text: (nameInstantaneousFuelUint == 1) ? "---" : valueDisplayContent2.toFixed(1)
 //                text: (nameInstantaneousFuelUint == 0xFFFF) ? "---" : valueDisplayContent2.toFixed(1)
             text: valueDisplayContent2.toFixed(1) == 0xFFFF * 0.1 ? "---" : valueDisplayContent2.toFixed(1)
+            font.family: fontName.fontCurrent
         }
 
 
@@ -83,6 +85,7 @@ Rectangle {
             font.pixelSize: 28
             color: "white"
             text: valueDisplayContent3 == 0xFFFF ? "---" : valueDisplayContent3
+            font.family: fontName.fontCurrent
         }
     }
 

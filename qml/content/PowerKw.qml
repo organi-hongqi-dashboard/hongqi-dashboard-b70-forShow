@@ -89,9 +89,19 @@ Item {
             from: ""
             to: "show"
             SequentialAnimation {
-//                PauseAnimation { duration: 1400 }
-                NumberAnimation { target: pointerRotationKw; property: "angle"; from: 0; to: 252; duration: 1000;  }
-                NumberAnimation { target: pointerRotationKw; property: "angle"; from: 252; to: 0; duration: 1000;  }
+//                ScriptAction {
+//                    script: {
+//                        CarStatus.active = false;
+//                    }
+//                }
+////                PauseAnimation { duration: 1400 }
+//                NumberAnimation { target: pointerRotationKw; property: "angle"; from: 0; to: 252; duration: 1000;  }
+//                NumberAnimation { target: pointerRotationKw; property: "angle"; from: 252; to: 0; duration: 1000;  }
+//                ScriptAction {
+//                    script: {
+//                        CarStatus.active = true;
+//                    }
+//                }
             }
         },
         Transition {
