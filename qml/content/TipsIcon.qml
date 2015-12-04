@@ -3,41 +3,41 @@ import QtQuick 2.2
 Item {
     id: tipsIcon
 
-    property bool readyValue: CarStatus.ready
-    property int safetyBeltWarningValue: CarStatus.seatBeltLight
-    property int airBagValue: CarStatus.airBag
-    property bool absErrValue: CarStatus.absLight
-    property bool parkingBrakeErrValue: CarStatus.parkingBrakeErr
-    property bool sysBattErrValue: CarStatus.accumulatorLight
-    property bool fogRearLampValue: CarStatus.fogRearLamp
-    property bool motorHotValue: CarStatus.generatorFault
-    property bool fogFrontLampValue: CarStatus.fogFrontLamp
-    property bool positionLampValue: CarStatus.positionLight
-    property bool parkingBrakeValue: CarStatus.parkingBrake
-    property bool motorErr___1Value: CarStatus.engineErrLight
-    property int engineOilLightValue: CarStatus.oilPressureLight
-    property bool tirePressWarningValue: CarStatus.tirePressure
-    property bool sysBattWarningErrValue: CarStatus.batteryFault
-    property bool highBeamLightValue: CarStatus.highBeamLight
-    property bool gearboxLightValue: CarStatus.gearBoxFault
-    property bool rightLampValue: CarStatus.leftLamp
-    property bool motorErrValue: CarStatus.vehicleFailure
-    property bool fixWarningValue: CarStatus.engineSVSErr
-    property int powerSteerErrLightValue: CarStatus.epsFault
-    property bool leftLampValue: CarStatus.rightLamp
-    property bool epcValue: CarStatus.epc
-    property bool waterTempWarningValue: CarStatus.eleMotorCoolantHighTemp || CarStatus.engineCoolantHighTemp
-    property bool oilwarningValue: CarStatus.fuel < 100 / 8
-    property bool chargeWarningValue: CarStatus.soc <= 30
-    property bool sysBattWarningValue: CarStatus.dynamicElectricityCut
-    property bool carDoorValue: CarStatus.rfDoor || CarStatus.lfDoor || CarStatus.rrDoor || CarStatus.lrDoor ||
-                                CarStatus.trunkDoor || CarStatus.hoodDoor
-    property bool rfDoorValue: CarStatus.rfDoor
-    property bool lfDoorValue: CarStatus.lfDoor
-    property bool rrDoorValue: CarStatus.rrDoor
-    property bool lrDoorValue: CarStatus.lrDoor
-    property bool chargeErrValue: CarStatus.chargeState == 4
-    property bool chargingLineValue: CarStatus.chargingLine
+    property bool readyValue: true//CarStatus.ready
+    property int safetyBeltWarningValue: 1//CarStatus.seatBeltLight
+    property int airBagValue: 1//CarStatus.airBag
+    property bool absErrValue: true//CarStatus.absLight
+    property bool parkingBrakeErrValue: true//CarStatus.parkingBrakeErr
+    property bool sysBattErrValue: true//CarStatus.accumulatorLight
+    property bool fogRearLampValue: true//CarStatus.fogRearLamp
+    property bool motorHotValue: true//CarStatus.generatorFault
+    property bool fogFrontLampValue: true//CarStatus.fogFrontLamp
+    property bool positionLampValue: true//CarStatus.positionLight
+    property bool parkingBrakeValue: true//CarStatus.parkingBrake
+    property bool motorErr___1Value: true//CarStatus.engineErrLight
+    property int engineOilLightValue:1// CarStatus.oilPressureLight
+    property bool tirePressWarningValue: true//CarStatus.tirePressure
+    property bool sysBattWarningErrValue:true// CarStatus.batteryFault
+    property bool highBeamLightValue: true//CarStatus.highBeamLight
+    property bool gearboxLightValue: true//CarStatus.gearBoxFault
+    property bool rightLampValue: true//CarStatus.leftLamp
+    property bool motorErrValue: true//CarStatus.vehicleFailure
+    property bool fixWarningValue: true//CarStatus.engineSVSErr
+    property int powerSteerErrLightValue: 1//CarStatus.epsFault
+    property bool leftLampValue: true//CarStatus.rightLamp
+    property bool epcValue: true//CarStatus.epc
+    property bool waterTempWarningValue: true//CarStatus.eleMotorCoolantHighTemp || CarStatus.engineCoolantHighTemp
+    property bool oilwarningValue: true//CarStatus.fuel < 100 / 8
+    property bool chargeWarningValue: true//CarStatus.soc <= 30
+    property bool sysBattWarningValue: true//CarStatus.dynamicElectricityCut
+    property bool carDoorValue: true//CarStatus.rfDoor || CarStatus.lfDoor || CarStatus.rrDoor || CarStatus.lrDoor ||
+                                //CarStatus.trunkDoor || CarStatus.hoodDoor
+    property bool rfDoorValue: true//CarStatus.rfDoor
+    property bool lfDoorValue: true//CarStatus.lfDoor
+    property bool rrDoorValue: true//CarStatus.rrDoor
+    property bool lrDoorValue: true//CarStatus.lrDoor
+    property bool chargeErrValue: true//CarStatus.chargeState == 4
+    property bool chargingLineValue: true//CarStatus.chargingLine
 
     Item {
         id: lights
@@ -54,8 +54,8 @@ Item {
         }
         Image {
             id: safetyBeltWarning
-            x: 1838
-            y: 597
+            x: 1840
+            y: 601
             //            opacity: safetyBeltWarningValue == 1 ? 1.0 : 0.0
 //            width: 43
 //            height: 48
@@ -92,8 +92,8 @@ Item {
         }
         Image {
             id: airBag
-            x: 1742
-            y: 24
+            x: 1767
+            y: 42
             //            opacity: airBagValue == 1 ? 1.0 : 0.0
 //            width: 52
 //            height: 46
@@ -130,8 +130,8 @@ Item {
         }
         Image {
             id: absErr
-            x: 1794
-            y: 71
+            x: 1810
+            y: 82
             opacity: absErrValue == 1 ? 1.0 : 0.0
 //            width: 50
 //            height: 40
@@ -157,8 +157,8 @@ Item {
         }
         Image {
             id: fogRearLamp
-            x: 30
-            y: 112
+            x: 32
+            y: 131
             opacity: fogRearLampValue == 1 ? 1.0 : 0.0
 //            width: 61
 //            height: 33
@@ -173,15 +173,15 @@ Item {
 //            height: 46
             source: "qrc:/images/images/lights/motorHot.png"
         }
-        Image {
-            id: fogFrontLamp
-            x: 63
-            y: 58
-            opacity: fogFrontLampValue == 1 ? 1.0 : 0.0
-//            width: 64
-//            height: 34
-            source: "qrc:/images/images/lights/fogFrontLamp.png"
-        }
+//        Image {
+//            id: fogFrontLamp
+//            x: 63
+//            y: 58
+//            opacity: fogFrontLampValue == 1 ? 1.0 : 0.0
+////            width: 64
+////            height: 34
+//            source: "qrc:/images/images/lights/fogFrontLamp.png"
+//        }
         Image {
             id: positionLamp
             x: 70
@@ -267,8 +267,8 @@ Item {
         }
         Image {
             id: highBeamLight
-            x: 138
-            y: 21
+            x: 117
+            y: 50
             opacity: highBeamLightValue == 1 ? 1.0 : 0.0
 //            width: 58
 //            height: 33
@@ -312,8 +312,8 @@ Item {
         }
         Image {
             id: powerSteerErrLight
-            x: 1836
-            y: 126
+            x: 1842
+            y: 128
             //            opacity: powerSteerErrLightValue == 1 ? 1.0 : 0.0
 //            width: 54
 //            height: 41
@@ -359,8 +359,8 @@ Item {
         }
         Image {
             id: epc
-            x: 35
-            y: 622
+            x: 38
+            y: 623
             opacity: epcValue == 1 ? 1.0 : 0.0
             width: 51
             height: 24
