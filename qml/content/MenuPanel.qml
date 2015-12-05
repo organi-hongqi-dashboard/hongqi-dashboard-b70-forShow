@@ -16,8 +16,8 @@ Item {
 	// hour
 	Image {
         id: hourBlow
-        x: 784
-        y: 277
+        x: 804
+        y: 275
         source: "qrc:/images/images/menuPanel/hourblow.png"
 	}
 	Text {
@@ -26,7 +26,7 @@ Item {
 		//		y: 26
 		anchors.centerIn: hourBlow
 		color: "white"
-        font.pointSize: 40
+        font.pixelSize: 55
         font.family: fontName.fontCurrent
 		text: "23"
 	}
@@ -34,9 +34,9 @@ Item {
     Text {
         id: colon
         x: 946
-        y: 282
+        y: 278
         color: "white"
-        font.pointSize: 40
+        font.pixelSize: 55
         font.family: fontName.fontCurrent
         text: ":"
     }
@@ -44,7 +44,7 @@ Item {
 	// minute
 	Image {
         id: minuteBlow
-        x: 991
+        x: 971
         y: 275
 		visible: false
 //		sourceSize: Qt.size(70,53)
@@ -54,7 +54,7 @@ Item {
         id: minute
 		anchors.centerIn: minuteBlow
 		color: "white"
-        font.pointSize: 40
+        font.pixelSize: 55
         font.family: fontName.fontCurrent
 		text: "59"
 	}
@@ -62,7 +62,7 @@ Item {
 	// ok
 	Image {
         id: okBlow
-        x: 784
+        x: 804
         y: 412
 		visible: false
         source: "qrc:/images/images/menuPanel/okBlow.png"
@@ -71,7 +71,7 @@ Item {
         id: ok
 		anchors.centerIn: okBlow
 		color: "white"
-		font.pointSize: 15
+        font.pixelSize: 28
         font.family: fontName.fontCurrent
         text: "确认"
 	}
@@ -79,7 +79,7 @@ Item {
 	// cancel
 	Image {
         id: cancelBlow
-        x: 999
+        x: 979
         y: 412
 		visible: false
         source: "qrc:/images/images/menuPanel/okBlow.png"
@@ -90,7 +90,7 @@ Item {
 		//		y: 104
 		anchors.centerIn: cancelBlow
 		color: "white"
-		font.pointSize: 15
+        font.pixelSize: 28
         font.family: fontName.fontCurrent
         text: "取消"
 	}

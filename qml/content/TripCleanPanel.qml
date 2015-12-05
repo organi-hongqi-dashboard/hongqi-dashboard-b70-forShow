@@ -18,7 +18,7 @@ Item {
         color: "red"
         anchors.top: background.top
         anchors.topMargin: 60
-        font.pointSize: 25
+        font.pixelSize: 40
         font.family: fontName.fontCurrent
         text: "小计里程清零 ?"
     }
@@ -35,7 +35,7 @@ Item {
         id: ok
 		anchors.centerIn: okBlow
 		color: "white"
-		font.pointSize: 15
+        font.pixelSize: 28
         font.family: fontName.fontCurrent
         text: "确认"
 	}
@@ -52,7 +52,7 @@ Item {
         id: cancel
 		anchors.centerIn: cancelBlow
 		color: "white"
-		font.pointSize: 15
+        font.pixelSize: 28
         font.family: fontName.fontCurrent
         text: "取消"
 	}
