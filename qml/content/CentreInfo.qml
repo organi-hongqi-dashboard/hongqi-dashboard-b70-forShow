@@ -8,6 +8,8 @@ Rectangle {
     property real valueTrip: CarStatus.trip1 * 0.1
     property real valueTemp: CarStatus.outTemp
     property string valueTime: CarStatus.time
+    property int valueGear: CarStatus.gear
+    property int valueGearMode: CarStatus.gearMode
 
     // module dateTime
     Item {
@@ -80,12 +82,15 @@ Rectangle {
     Item {
         id: tripTotalMileage
 
-        Image {
+        Text {
             id: kMleft
             x: 723
-            y: 610
-            opacity: 1.0
-            source: "qrc:/images/images/tripTotalMileage/KMleft.png"
+            y: 601
+            color: "black"
+            font.pixelSize: 24
+            font.italic: true
+            text: "km"
+            font.family: fontName.fontCurrent
         }
         Text {
             id: numTrip
@@ -99,12 +104,15 @@ Rectangle {
             font.family: fontName.fontCurrent
         }
 
-        Image {
+        Text {
             id: kMright
             x: 1228
-            y: 610
-            opacity: 1.0
-            source: "qrc:/images/images/tripTotalMileage/KMright.png"
+            y: 601
+            color: "black"
+            font.pixelSize: 24
+            font.italic: true
+            text: "km"
+            font.family: fontName.fontCurrent
         }
         Text {
             id: numTotalMileage
@@ -124,6 +132,47 @@ Rectangle {
             y: 634
             opacity: 1.0
             source: "qrc:/images/images/tripTotalMileage/tripTotalMileageOut.png"
+        }
+    }
+
+    // module gear
+    Item {
+        id: gear
+
+        Image {
+            id: gearOutline
+            x: 839
+            y: 587
+            opacity: 1.0
+            source: "qrc:/images/images/gear/gearOutline.png"
+        }
+        Image {
+            id: gearD
+            x: 885
+            y: 535
+            opacity: valueGearMode == 0x01 ? 1.0 : 0.0
+            source: "qrc:/images/images/gear/gearD.png"
+        }
+        Image {
+            id: gearN
+            x: 884
+            y: 536
+            opacity: (valueGearMode == 0 && valueGear == 0x0e) ? 1.0 : 0.0
+            source: "qrc:/images/images/gear/gearN.png"
+        }
+        Image {
+            id: gearR
+            x: 887
+            y: 535
+            opacity: (valueGearMode == 0 && valueGear == 0x0f) ? 1.0 : 0.0
+            source: "qrc:/images/images/gear/gearR.png"
+        }
+        Image {
+            id: gearP
+            x: 888
+            y: 535
+            opacity: (valueGearMode == 0 && valueGear == 0) ? 1.0 : 0.0
+            source: "qrc:/images/images/gear/gearP.png"
         }
     }
 

@@ -60,8 +60,8 @@ Rectangle {
         }
         Image {
             id: hoodOpen
-            x: 901
-            y: 226
+            x: 896
+            y: 225
             opacity: valueHood == 1 ? 1.0 : 0.0
             source: "qrc:/images/images/carDoorState/hoodOpen.png"
         }
