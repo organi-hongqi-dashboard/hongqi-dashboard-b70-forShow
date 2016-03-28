@@ -29,7 +29,7 @@ Window {
 
         MainPanel {
             id: mainPanel
-            state: ""
+            state: "show"
         }
         ChargePanel {
             id: chargePanel
@@ -40,37 +40,37 @@ Window {
 //            id: fps
 //        }
 
-        transitions: [
-            Transition {
-                from: ""
-                to: "show"
-                SequentialAnimation {
-//                    ScriptAction {
-//                        script: {
-//                            chargePanel.state = "show";
-//                            mainPanel.state = "";
-//                        }
-//                    }
-//                    PauseAnimation { duration: 1400 }
-                    ScriptAction {
-                        script: {
-                            chargePanel.state = "";
-                            mainPanel.state = "show";
-                        }
-                    }
-//                    PauseAnimation { duration: 1400 }
+//        transitions: [
+//            Transition {
+//                from: ""
+//                to: "show"
+//                SequentialAnimation {
+////                    ScriptAction {
+////                        script: {
+////                            chargePanel.state = "show";
+////                            mainPanel.state = "";
+////                        }
+////                    }
+////                    PauseAnimation { duration: 1400 }
 //                    ScriptAction {
 //                        script: {
 //                            chargePanel.state = "";
 //                            mainPanel.state = "show";
 //                        }
 //                    }
-                }
-            }
-        ]
+////                    PauseAnimation { duration: 1400 }
+////                    ScriptAction {
+////                        script: {
+////                            chargePanel.state = "";
+////                            mainPanel.state = "show";
+////                        }
+////                    }
+//                }
+//            }
+//        ]
 
-        Component.onCompleted: {
-            b70.state = "show";
-        }
+//        Component.onCompleted: {
+//            b70.state = "show";
+//        }
     }
 }
