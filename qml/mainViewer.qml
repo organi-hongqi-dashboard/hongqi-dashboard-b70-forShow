@@ -14,26 +14,28 @@ Window {
         color: "black"
 
         property bool valueDisplayMode: CarStatus.displayMode
-        onValueDisplayModeChanged: {
-            changeState();
-        }
-        function changeState() {
-            if(true === valueDisplayMode) {
-                mainPanel.state = "";
-                chargePanel.state = "show";
-            } else {
-                mainPanel.state = "show";
-                chargePanel.state = "";
-            }
-        }
+//        onValueDisplayModeChanged: {
+//            changeState();
+//        }
+//        function changeState() {
+//            if(true === valueDisplayMode) {
+//                mainPanel.state = "";
+//                chargePanel.state = "show";
+//            } else {
+//                mainPanel.state = "show";
+//                chargePanel.state = "";
+//            }
+//        }
 
         MainPanel {
             id: mainPanel
             state: "show"
+            visible: !b70.valueDisplayMode
         }
         ChargePanel {
             id: chargePanel
             state: ""
+            visible: b70.valueDisplayMode
         }
 
 //        Fps {

@@ -6,27 +6,26 @@ Rectangle {
     property bool carDoorValue: CarStatus.rfDoor || CarStatus.lfDoor || CarStatus.rrDoor || CarStatus.lrDoor ||
                                 CarStatus.trunkDoor || CarStatus.hoodDoor
 
-    onCarDoorValueChanged: {
-        if(true === carDoorValue) {
-            carDoorPanel.state = "show";
-            displayWindow.state = "";
-        } else {
-            carDoorPanel.state = "";
-            displayWindow.state = "show";
-        }
-    }
+//    onCarDoorValueChanged: {
+//        if(true === carDoorValue) {
+//            carDoorPanel.state = "show";
+//            displayWindow.state = "";
+//        } else {
+//            carDoorPanel.state = "";
+//            displayWindow.state = "show";
+//        }
+//    }
 
     CarDoorPanel {
         id: carDoorPanel
-        state: ""
+        opacity: carDoorValue ? 1.0 : 0.0
     }
     DisplayWindow {
         id: displayWindow
-        state: "show"
+        opacity: carDoorValue ? 0.0 : 1.0
     }
     CentreInfo {
         id: centreInfo
-        state: "show"
     }
 
     states: [
@@ -38,7 +37,7 @@ Rectangle {
         },
         State {
             name: "show"
-//            PropertyChanges { target: carDoorPanel; state: "show" }
+            PropertyChanges { target: carDoorPanel; state: "show" }
             PropertyChanges { target: displayWindow; state: "show" }
             PropertyChanges { target: centreInfo; state: "show" }
         }
