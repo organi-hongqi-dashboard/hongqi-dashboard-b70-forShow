@@ -34,7 +34,7 @@ Window {
         }
         ChargePanel {
             id: chargePanel
-            state: ""
+            state: "show"
             visible: b70.valueDisplayMode
         }
 
