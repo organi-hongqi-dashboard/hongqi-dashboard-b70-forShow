@@ -3,6 +3,7 @@ import QtQuick 2.2
 Item {
     id: mainPanel
     visible: false
+    state: CarStatus.displayMode ? "" : "show"
 
     property int nameAvgFuel: CarStatus.avgFuel
     property int nameInstantaneousFuelUint: CarStatus.instantaneousFuel

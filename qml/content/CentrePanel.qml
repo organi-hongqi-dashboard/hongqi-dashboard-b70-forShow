@@ -31,14 +31,10 @@ Rectangle {
     states: [
         State {
             name: ""
-            PropertyChanges { target: carDoorPanel; state: ""}
-            PropertyChanges { target: displayWindow; state: "" }
             PropertyChanges { target: centreInfo; state: "" }
         },
         State {
             name: "show"
-            PropertyChanges { target: carDoorPanel; state: "show" }
-            PropertyChanges { target: displayWindow; state: "show" }
             PropertyChanges { target: centreInfo; state: "show" }
         }
     ]

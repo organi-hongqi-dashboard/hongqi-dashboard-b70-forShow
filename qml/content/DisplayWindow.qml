@@ -2,7 +2,7 @@ import QtQuick 2.2
 
 Rectangle {
     id: displayWindow
-    visible: true
+//    visible: true
 
     property real valueDisplayContent1: CarStatus.avgFuel * 0.1
     property real valueDisplayContent2: CarStatus.instantaneousFuel * 0.1
@@ -89,29 +89,29 @@ Rectangle {
         }
     }
 
-    states: [
-        State {
-            name: ""
-            PropertyChanges { target: displayWindow; visible: false }
-        },
-        State {
-            name: "show"
-            PropertyChanges { target: displayWindow; visible: true }
-        }
-    ]
+//    states: [
+//        State {
+//            name: ""
+//            PropertyChanges { target: displayWindow; visible: false }
+//        },
+//        State {
+//            name: "show"
+//            PropertyChanges { target: displayWindow; visible: true }
+//        }
+//    ]
 
-    transitions: [
-        Transition {
-            from: ""
-            to: "show"
+//    transitions: [
+//        Transition {
+//            from: ""
+//            to: "show"
 
-        },
-        Transition {
-            from: "show"
-            to: ""
+//        },
+//        Transition {
+//            from: "show"
+//            to: ""
 
-        }
-    ]
+//        }
+//    ]
 //    Component.onCompleted: {
 //        displayWindow.state = "show"
 //    }

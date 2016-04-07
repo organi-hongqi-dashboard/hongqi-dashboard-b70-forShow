@@ -2,7 +2,7 @@ import QtQuick 2.2
 
 Rectangle {
     id: carDoorPanel
-    visible: false
+//    visible: false
 
     property bool valueRightFrontDoor: CarStatus.rfDoor
     property bool valueLeftFrontDoor: CarStatus.lfDoor
@@ -67,28 +67,28 @@ Rectangle {
         }
     }
 
-    states: [
-        State {
-            name: ""
-            PropertyChanges { target: carDoorPanel; visible: false }
-        },
-        State {
-            name: "show"
-            PropertyChanges { target: carDoorPanel; visible: true }
-        }
-    ]
+//    states: [
+//        State {
+//            name: ""
+//            PropertyChanges { target: carDoorPanel; visible: false }
+//        },
+//        State {
+//            name: "show"
+//            PropertyChanges { target: carDoorPanel; visible: true }
+//        }
+//    ]
 
-    transitions: [
-        Transition {
-            from: ""
-            to: "show"
+//    transitions: [
+//        Transition {
+//            from: ""
+//            to: "show"
 
-        },
-        Transition {
-            from: "show"
-            to: ""
+//        },
+//        Transition {
+//            from: "show"
+//            to: ""
 
-        }
-    ]
+//        }
+//    ]
 }
 

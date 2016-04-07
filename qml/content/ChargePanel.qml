@@ -2,7 +2,7 @@ import QtQuick 2.2
 
 Item {
     id: chargePanel
-    opacity: 0
+    opacity: CarStatus.displayMode ? 1.0 : 0.0
 
     property int valueBatteryPower: CarStatus.soc
     property string textBatteryPower: valueBatteryPower + "%"
@@ -137,45 +137,45 @@ Item {
 
     }
 
-    states: [
-        State {
-            name: ""
-            PropertyChanges { target: chargePanel; opacity: 0 }
-        },
-        State {
-            name: "show"
-            PropertyChanges { target: chargePanel; opacity: 1 }
-        }
-    ]
+//    states: [
+//        State {
+//            name: ""
+//            PropertyChanges { target: chargePanel; opacity: 0 }
+//        },
+//        State {
+//            name: "show"
+//            PropertyChanges { target: chargePanel; opacity: 1 }
+//        }
+//    ]
 
-    transitions: [
-        Transition {
-            from: ""
-            to: "show"
-            SequentialAnimation {
+//    transitions: [
+//        Transition {
+//            from: ""
+//            to: "show"
+//            SequentialAnimation {
 
-//                NumberAnimation {
-//                    target: chargePanel
-//                    property: "x"
-//                    duration: 2000
-//                    to: 1111
-//                }
-//                NumberAnimation {
-//                    target: chargePanel
-//                    property: "x"
-//                    duration: 2000
-//                    to: 0
-//                }
-            }
-        },
-        Transition {
-            from: "show"
-            to: ""
-            SequentialAnimation {
+////                NumberAnimation {
+////                    target: chargePanel
+////                    property: "x"
+////                    duration: 2000
+////                    to: 1111
+////                }
+////                NumberAnimation {
+////                    target: chargePanel
+////                    property: "x"
+////                    duration: 2000
+////                    to: 0
+////                }
+//            }
+//        },
+//        Transition {
+//            from: "show"
+//            to: ""
+//            SequentialAnimation {
 
-            }
-        }
-    ]
+//            }
+//        }
+//    ]
 //    Component.onCompleted: {
 //        chargePanel.state = ""
 //    }
