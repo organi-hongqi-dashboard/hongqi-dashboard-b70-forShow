@@ -69,4 +69,5 @@ RCC_DIR = build
 OBJECTS_DIR = build
 
 DISTFILES += \
-    qml/content/MenuPanel.qml
+    qml/content/MenuPanel.qml \
+    qml/content/EnergyFlow.qml

@@ -65,6 +65,7 @@ class CarStatus : public QSerialPort
     Q_PROPERTY(bool key2 MEMBER m_key2 NOTIFY key2Changed)
     Q_PROPERTY(bool key3 MEMBER m_key3 NOTIFY key3Changed)
     Q_PROPERTY(bool key4 MEMBER m_key4 NOTIFY key4Changed)
+    Q_PROPERTY(uint vehicleWorkingMode MEMBER m_vehicleWorkingMode NOTIFY vehicleWorkingModeChanged)
     Q_PROPERTY(bool igOn MEMBER m_igOn NOTIFY igOnChanged)
     Q_PROPERTY(uint gear MEMBER m_gear NOTIFY gearChanged)
     Q_PROPERTY(uint gearMode MEMBER m_gearMode NOTIFY gearModeChanged)
@@ -89,7 +90,12 @@ class CarStatus : public QSerialPort
     Q_PROPERTY(qreal outTemp MEMBER m_outTemp NOTIFY outTempChanged)
     Q_PROPERTY(uint avgFuel MEMBER m_avgFuel NOTIFY avgFuelChanged)
     Q_PROPERTY(qreal instantaneousFuel MEMBER m_instantaneousFuel NOTIFY instantaneousFuelChanged)
-    Q_PROPERTY(qreal batteryCurrent MEMBER m_batteryCurrent NOTIFY batteryCurrentChanged)
+    Q_PROPERTY(bool flowGearBox MEMBER m_flowGearBox NOTIFY flowGearBoxChanged)
+    Q_PROPERTY(bool flowBattery MEMBER m_flowBattery NOTIFY flowBatteryChanged)
+    Q_PROPERTY(uint flowBatFlow MEMBER m_flowBatFlow NOTIFY flowBatFlowChanged)
+    Q_PROPERTY(uint flowFrontWheel MEMBER m_flowFrontWheel NOTIFY flowFrontWheelChanged)
+    Q_PROPERTY(uint flowWheels MEMBER m_flowWheels NOTIFY flowWheelsChanged)
+    Q_PROPERTY(uint flowMotor MEMBER m_flowMotor NOTIFY flowMotorChanged)
     Q_PROPERTY(qreal batteryVoltage MEMBER m_batteryVoltage NOTIFY batteryVoltageChanged)
 
     // General SettingsInfo
@@ -131,6 +137,7 @@ signals:
     void key2Changed(bool);
     void key3Changed(bool);
     void key4Changed(bool);
+    void vehicleWorkingModeChanged(uint);
     void igOnChanged(bool);
     void gearChanged(uint);
     void gearModeChanged(uint);
@@ -155,7 +162,12 @@ signals:
     void outTempChanged(qreal);
     void avgFuelChanged(uint);
     void instantaneousFuelChanged(qreal);
-    void batteryCurrentChanged(qreal);
+    void flowGearBoxChanged(bool);
+    void flowBatteryChanged(bool);
+    void flowBatFlowChanged(uint);
+    void flowFrontWheelChanged(uint);
+    void flowWheelsChanged(uint);
+    void flowMotorChanged(uint);
     void batteryVoltageChanged(qreal);
 
     void activeChanged(bool);
@@ -201,6 +213,7 @@ protected:
     bool m_key2;
     bool m_key3;
     bool m_key4;
+    uint m_vehicleWorkingMode;
     bool m_igOn;
     uint m_gear;
     uint m_gearMode;
@@ -225,7 +238,12 @@ protected:
     qreal m_outTemp;
     uint16_t m_avgFuel;
     uint16_t m_instantaneousFuel;
-    qreal m_batteryCurrent;
+    bool m_flowGearBox;
+    bool m_flowBattery;
+    uint m_flowBatFlow;
+    uint m_flowFrontWheel;
+    uint m_flowWheels;
+    uint m_flowMotor;
     qreal m_batteryVoltage;
 
     // General SettingsInfo

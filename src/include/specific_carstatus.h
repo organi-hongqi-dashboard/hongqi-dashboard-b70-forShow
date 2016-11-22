@@ -54,6 +54,8 @@ class SpecificCarStatus : public CarStatus
     Q_PROPERTY(int epsFault MEMBER m_epsFault NOTIFY epsFaultChanged)
     Q_PROPERTY(int oilPressureLight MEMBER m_oilPressureLight NOTIFY oilPressureLightChanged)
 
+    Q_PROPERTY(bool isEnergyFlowShow MEMBER m_isEnergyFlowShow NOTIFY isEnergyFlowShowChanged)
+
     // Special SettingsInfo
 
 #ifdef DEBUG
@@ -115,6 +117,8 @@ signals:
     void oilPressureLightChanged(int);
     void epsFaultChanged(int);
 
+    void isEnergyFlowShowChanged(bool);
+
 #ifdef DEBUG
     void leftButtonChanged(bool);
     void rightButtonChanged(bool);
@@ -137,6 +141,7 @@ protected slots:
     void leftButtonDeal(bool);
     void rightButtonDeal(bool);
     void okButtonDeal(bool);
+    void energyFlowButtonDeal(bool);
 
 
 protected:
@@ -200,6 +205,8 @@ protected:
     uint m_rightButtonStep;
     uint m_okButtonStep;
     bool m_okButtonStepFlag;
+    uint m_energyFlowButtonStep;
+    bool m_isEnergyFlowShow;
 
     uint m_yearTemp;
     uint m_monthTemp;

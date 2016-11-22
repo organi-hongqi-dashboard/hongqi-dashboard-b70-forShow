@@ -74,7 +74,7 @@ typedef struct {
         key2: 1,                 // byte10: 1
         key3: 1,                 // byte10: 2
         key4: 1,                 // byte10: 3
-        remain1: 3,              // byte10: 4 ~ 6
+        vehicleWorkingMode: 3,              // byte10: 4 ~ 6
         igOn: 1;                 // byte10: 7
     uint8_t gear: 4,             // byte11: 0 ~ 3
         gearMode: 2,             // byte11: 4 ~ 5
@@ -103,7 +103,15 @@ typedef struct {
         avgFuel;            // byte32: 0 ~ 15
     uint16_t
         instantaneousFuel;// byte34: 0 ~ 15
-    uint16_t batteryCurrent;     // byte36: 0 ~ 15
+    //uint16_t batteryCurrent;     // byte36: 0 ~ 15
+    uint8_t reserve9: 1,
+        flowGearBox: 1,
+        flowBattery: 1,
+        flowBatFlow: 2,
+        flowFrontWheel: 3;
+    uint8_t flowWheels: 2,
+        flowMotor: 2,
+        reserve8: 4;
     uint16_t batteryVoltage;     // byte38: 0 ~ 15
 }__attribute__((packed)) GeneralInfo;
 

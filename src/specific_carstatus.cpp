@@ -12,6 +12,7 @@ SpecificCarStatus::SpecificCarStatus(const QString &serialDev, QSerialPort *pare
     connect(this, SIGNAL(key1Changed(bool)), this, SLOT(leftButtonDeal(bool)));
     connect(this, SIGNAL(key2Changed(bool)), this, SLOT(rightButtonDeal(bool)));
     connect(this, SIGNAL(key3Changed(bool)), this, SLOT(okButtonDeal(bool)));
+    connect(this, SIGNAL(key4Changed(bool)), this, SLOT(energyFlowButtonDeal(bool)));
 }
 
 void SpecificCarStatus::initValues()
@@ -71,6 +72,8 @@ void SpecificCarStatus::initValues()
     m_rightButtonStep = 0;
     m_okButtonStep = 0;
     m_okButtonStepFlag = false;
+    m_energyFlowButtonStep = 0;
+    m_isEnergyFlowShow = false;
 
 #ifdef DEBUG
     m_leftButton = false;
@@ -96,6 +99,7 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         BoolValueChangeSet(key2, data.key2);
         BoolValueChangeSet(key3, data.key3);
         BoolValueChangeSet(key4, data.key4);
+        BoolValueChangeSet(vehicleWorkingMode, data.vehicleWorkingMode);
         BoolValueChangeSet(igOn, data.igOn);
         BoolValueChangeSet(gear, data.gear);
         NumValueChangeSet(gearMode, data.gearMode, (uint8_t) 0, (uint8_t) 3);
@@ -120,7 +124,12 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         BoolValueChangeSet(avgFuelUnit, data.avgFuelUnit);
         NumValueErrChangeSet(instantaneousFuel, data.instantaneousFuel, (uint16_t) 0, (uint16_t) 450, 0xFFFF);
         BoolValueChangeSet(instantaneousFuelUnit, data.instantaneousFuelUnit);
-        NumValueChangeSet(batteryCurrent, data.batteryCurrent * 0.1 + (-500), (double)0, (double) 2000);
+        BoolValueChangeSet(flowGearBox, data.flowGearBox);
+        BoolValueChangeSet(flowBattery, data.flowBattery);
+        BoolValueChangeSet(flowBatFlow, data.flowBatFlow);
+        BoolValueChangeSet(flowFrontWheel, data.flowFrontWheel);
+        BoolValueChangeSet(flowWheels, data.flowWheels);
+        BoolValueChangeSet(flowMotor, data.flowMotor);
         NumValueChangeSet(batteryVoltage, data.batteryVoltage * 0.1 + 0, (double) 0, (double) 100);
 
         /* left button */
@@ -137,8 +146,14 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         /* Ok(or switch) button */
         if (m_key3 != data.key3) {
             m_key3 = data.key3;
-        } qDebug() << "m_key3: " << m_key3;
+        }
         emit key3Changed(m_key3);
+
+        /* energy flow switch button */
+        if (m_key4 != data.key4) {
+            m_key4 = data.key4;
+        }
+        emit key4Changed(m_key4);
 
         updateTime(data.dateTime);
     }
@@ -338,6 +353,32 @@ void SpecificCarStatus::okButtonDeal(bool v)
 #ifdef DEBUG
         setButtonOk("NONE");
 #endif
+    }
+}
+
+void SpecificCarStatus::energyFlowButtonDeal(bool v)
+{
+    if (m_energyFlowButtonStep == 0 && v)
+        ++m_energyFlowButtonStep;
+
+    if (m_energyFlowButtonStep >= 1 && m_energyFlowButtonStep < KEY_PRESS_TIME) {
+        if (!v) {
+            m_energyFlowButtonStep = 0;
+        }
+        ++m_energyFlowButtonStep;
+    }
+
+    if (m_energyFlowButtonStep == KEY_PRESS_TIME && v) {
+        ++m_energyFlowButtonStep;
+
+        m_isEnergyFlowShow = !m_isEnergyFlowShow;
+        emit isEnergyFlowShowChanged(m_isEnergyFlowShow);
+
+        qDebug() << "m_isEnergyFlowShow: " << m_isEnergyFlowShow;
+    }
+
+    if (m_energyFlowButtonStep == KEY_PRESS_TIME + 1 && !v) {
+        m_energyFlowButtonStep = 0;
     }
 }
 

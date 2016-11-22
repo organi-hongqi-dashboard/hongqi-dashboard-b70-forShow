@@ -81,8 +81,14 @@ void CarStatus::initValues()
     m_outTemp = 0;
     m_avgFuel = 0;
     m_instantaneousFuel = 0;
-    m_batteryCurrent = 0;
+    m_flowGearBox = false;
+    m_flowBattery = false;
+    m_flowBatFlow = 0;
+    m_flowFrontWheel = 0;
+    m_flowWheels = 0;
+    m_flowMotor = 0;
     m_batteryVoltage = 0;
+    m_vehicleWorkingMode = 0;
 
     m_date = "2000-01-01";
     m_time = "00:00";
@@ -215,7 +221,6 @@ void CarStatus::getGeneralSerial(GeneralInfo data)
         BoolValueChangeSet(outTemp, data.outTemp);
         BoolValueChangeSet(avgFuel, data.avgFuel);
         BoolValueChangeSet(instantaneousFuel, data.instantaneousFuel);
-        BoolValueChangeSet(batteryCurrent, data.batteryCurrent);
         BoolValueChangeSet(batteryVoltage, data.batteryVoltage);
 
         updateTime(data.dateTime);

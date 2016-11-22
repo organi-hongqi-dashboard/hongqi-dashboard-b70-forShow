@@ -5,6 +5,7 @@ Rectangle {
 
     property bool carDoorValue: CarStatus.rfDoor || CarStatus.lfDoor || CarStatus.rrDoor || CarStatus.lrDoor ||
                                 CarStatus.trunkDoor || CarStatus.hoodDoor
+    property bool isEnergyFlowShow: CarStatus.isEnergyFlowShow
 
 //    onCarDoorValueChanged: {
 //        if(true === carDoorValue) {
@@ -18,14 +19,30 @@ Rectangle {
 
     CarDoorPanel {
         id: carDoorPanel
-        opacity: carDoorValue ? 1.0 : 0.0
+        opacity: {
+            if (isEnergyFlowShow)
+                return 0.0;
+            else {
+                return (carDoorValue ? 1.0 : 0.0);
+            }
+        }
     }
     DisplayWindow {
         id: displayWindow
-        opacity: carDoorValue ? 0.0 : 1.0
+        opacity: {
+            if (isEnergyFlowShow)
+                return 0.0;
+            else
+                return (carDoorValue ? 0.0 : 1.0);
+        }
     }
     CentreInfo {
         id: centreInfo
+    }
+
+    EnergyFlow {
+        id: energyflow
+        visible: isEnergyFlowShow
     }
 
     states: [
