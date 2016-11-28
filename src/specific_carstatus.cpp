@@ -137,7 +137,7 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
             if (m_igOn != data.igOn) {
                 m_igOn = data.igOn;
 
-                if (true == m_igOn) {   // changed and be true(false -> true)
+                if (false == m_igOn) {   // changed and be false(true -> false)
                     m_key4 = false;
 
                     m_isEnergyFlowShow = false;
