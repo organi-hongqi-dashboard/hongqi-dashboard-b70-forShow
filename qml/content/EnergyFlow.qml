@@ -2203,7 +2203,6 @@ Item {
 
                 SequentialAnimation {
                     loops: Animation.Infinite
-                    running: true
 
                     ParallelAnimation {
                     NumberAnimation { target: flWheel3; property: "opacity"; from: 0.0; to: 1.0; duration: 100 }

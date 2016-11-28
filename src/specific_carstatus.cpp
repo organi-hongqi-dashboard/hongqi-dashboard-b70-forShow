@@ -100,7 +100,7 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         BoolValueChangeSet(key3, data.key3);
         BoolValueChangeSet(key4, data.key4);
         BoolValueChangeSet(vehicleWorkingMode, data.vehicleWorkingMode);
-        BoolValueChangeSet(igOn, data.igOn);
+//        BoolValueChangeSet(igOn, data.igOn);
         BoolValueChangeSet(gear, data.gear);
         NumValueChangeSet(gearMode, data.gearMode, (uint8_t) 0, (uint8_t) 3);
         NumValueChangeSet(keyStatus, data.keyStatus, (uint8_t) 0, (uint8_t) 3);
@@ -131,6 +131,20 @@ void SpecificCarStatus::getGeneralSerial(GeneralInfo data)
         BoolValueChangeSet(flowWheels, data.flowWheels);
         BoolValueChangeSet(flowMotor, data.flowMotor);
         NumValueChangeSet(batteryVoltage, data.batteryVoltage * 0.1 + 0, (double) 0, (double) 100);
+
+        /* igon */
+        do {
+            if (m_igOn != data.igOn) {
+                m_igOn = data.igOn;
+
+                if (true == m_igOn) {   // changed and be true(false -> true)
+                    m_key4 = false;
+
+                    m_isEnergyFlowShow = false;
+                    emit isEnergyFlowShowChanged(m_isEnergyFlowShow);
+                }
+            }
+        } while (0);
 
         /* left button */
         if (m_key1 != data.key1) {
