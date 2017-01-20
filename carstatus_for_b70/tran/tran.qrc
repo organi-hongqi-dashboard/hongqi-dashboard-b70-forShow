@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MText.qml</file>
+        <file>GeneralInfo.qml</file>
+        <file>SpecialInfo.qml</file>
+    </qresource>
+</RCC>

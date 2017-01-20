@@ -2,8 +2,12 @@
 *.swp
 Makefile
 bin/
+carstatus_for_b70/tran/bin/
+carstatus_for_b70/recv/bin/
 *.user*
 build/
+carstatus_for_b70/tran/build/
+carstatus_for_b70/recv/build/
 qrc_huatai.cpp
 src/*~
 src/*.swp
