@@ -74,6 +74,12 @@ Item {
 
             return;
         }
+
+        /* The two panels above are not displaying */
+        if (false == centrePanel.isEnergyFlowShow)
+            centrePanel.isEnergyFlowShow = true;
+        else
+            centrePanel.isEnergyFlowShow = false;
     }
 
     function buttonRight() {
@@ -90,6 +96,12 @@ Item {
 
             return;
         }
+
+        /* The two panels above are not displaying */
+        if (false == centrePanel.isEnergyFlowShow)
+            centrePanel.isEnergyFlowShow = true;
+        else
+            centrePanel.isEnergyFlowShow = false;
     }
 
     function buttonShort() {

@@ -5,7 +5,7 @@ Rectangle {
 
     property bool carDoorValue: CarStatus.rfDoor || CarStatus.lfDoor || CarStatus.rrDoor || CarStatus.lrDoor ||
                                 CarStatus.trunkDoor || CarStatus.hoodDoor
-    property bool isEnergyFlowShow: CarStatus.isEnergyFlowShow
+    property bool isEnergyFlowShow: false//CarStatus.isEnergyFlowShow
 
 //    onCarDoorValueChanged: {
 //        if(true === carDoorValue) {
