@@ -76,10 +76,14 @@ Item {
         }
 
         /* The two panels above are not displaying */
-        if (false == centrePanel.isEnergyFlowShow)
-            centrePanel.isEnergyFlowShow = true;
-        else
-            centrePanel.isEnergyFlowShow = false;
+        if (true == centrePanel.carDoorValue)
+            return;
+        else {
+            if (false == centrePanel.isEnergyFlowShow)
+                centrePanel.isEnergyFlowShow = true;
+            else
+                centrePanel.isEnergyFlowShow = false;
+        }
     }
 
     function buttonRight() {
@@ -98,10 +102,14 @@ Item {
         }
 
         /* The two panels above are not displaying */
-        if (false == centrePanel.isEnergyFlowShow)
-            centrePanel.isEnergyFlowShow = true;
-        else
-            centrePanel.isEnergyFlowShow = false;
+        if (true == centrePanel.carDoorValue)
+            return;
+        else {
+            if (false == centrePanel.isEnergyFlowShow)
+                centrePanel.isEnergyFlowShow = true;
+            else
+                centrePanel.isEnergyFlowShow = false;
+        }
     }
 
     function buttonShort() {

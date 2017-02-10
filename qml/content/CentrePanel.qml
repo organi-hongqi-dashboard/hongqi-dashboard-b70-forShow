@@ -19,21 +19,15 @@ Rectangle {
 
     CarDoorPanel {
         id: carDoorPanel
-        opacity: {
-            if (isEnergyFlowShow)
-                return 0.0;
-            else {
-                return (carDoorValue ? 1.0 : 0.0);
-            }
-        }
+        opacity: carDoorValue
     }
     DisplayWindow {
         id: displayWindow
         opacity: {
-            if (isEnergyFlowShow)
+            if (isEnergyFlowShow || carDoorValue)
                 return 0.0;
             else
-                return (carDoorValue ? 0.0 : 1.0);
+                return 1.0;
         }
     }
     CentreInfo {
@@ -42,7 +36,12 @@ Rectangle {
 
     EnergyFlow {
         id: energyflow
-        visible: isEnergyFlowShow
+        visible: {
+            if (true == carDoorValue)
+                return false;
+            else
+                return isEnergyFlowShow;
+        }
     }
 
     states: [
